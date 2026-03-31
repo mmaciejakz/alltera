@@ -57,7 +57,7 @@ nav a:hover {
 
 /* Sekcje */
 section {
-    padding: 80px 20px;
+    padding: 100px 20px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -91,7 +91,7 @@ p {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 100px 20px 60px 20px;
+    padding: 120px 20px 80px 20px;
     position: relative;
 }
 
@@ -333,7 +333,7 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
 }
 
 .contact-box {
@@ -363,7 +363,7 @@ p {
 footer {
     background: rgb(51, 47, 41);
     color: #ffffff !important;
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
     font-size: 12px;
     position: relative;
@@ -446,7 +446,7 @@ footer p {
     }
 
     section {
-        padding: 80px 40px;
+        padding: 120px 40px;
     }
 
     h2, h3 {
@@ -459,7 +459,7 @@ footer p {
 
     #about {
         flex-direction: row;
-        padding: 120px 40px 80px 40px;
+        padding: 140px 40px 100px 40px;
     }
 
     #about .about-image {
@@ -496,8 +496,8 @@ footer p {
         justify-content: flex-start;
         align-items: flex-start;
         text-align: left;
-        padding: 80px 40px;
-        min-height: 500px;
+        padding: 120px 40px;
+        min-height: 600px;
     }
 
     .contact-box {
@@ -511,7 +511,7 @@ footer p {
     }
 
     footer {
-        padding: 40px;
+        padding: 50px 40px;
         font-size: 14px;
     }
 
@@ -536,7 +536,7 @@ footer p {
     }
 
     section {
-        padding: 100px 60px;
+        padding: 140px 60px;
     }
 
     h2, h3 {
@@ -548,7 +548,7 @@ footer p {
     }
 
     #about {
-        padding: 140px 60px 100px 60px;
+        padding: 160px 60px 120px 60px;
     }
 
     #about .about-image {
@@ -561,6 +561,10 @@ footer p {
 
     #about .about-box h2 {
         font-size: 40px;
+    }
+
+    .contact-section {
+        padding: 140px 60px;
     }
 
     .contact-box {
