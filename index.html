@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- EKRAN POWITALNY - WYBÓR MARKI (KOLOROWE KARTY) -->
+<!-- EKRAN POWITALNY - WYBÓR MARKI (RESPONSYWNY Z GLOW) -->
 <div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); z-index: 99999; display: flex; justify-content: center; align-items: center; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
     
     <!-- Kontener na karty -->
@@ -61,44 +61,62 @@
 </div>
 
 <style>
-    /* Podstawowe style dla kart - desktop - KOLOROWE TŁA */
+    /* Podstawowe style dla kart - desktop */
     .brand-card {
         width: 260px;
+        background: #FFFFFF;
         border-radius: 28px;
         padding: 30px 20px;
         text-align: center;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
         transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.05);
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     
-    /* Kolory tła dla każdej marki */
+    /* Efekt GLOW na stałe dla każdej marki */
     .brand-card[data-brand="alltera"] {
-        background: linear-gradient(135deg, #268e87, #1f6e68);
+        box-shadow: 0 0 15px rgba(38, 142, 135, 0.4), 0 15px 30px rgba(0, 0, 0, 0.08);
     }
     
     .brand-card[data-brand="mnemo"] {
-        background: linear-gradient(135deg, #d0252d, #a81e25);
+        box-shadow: 0 0 15px rgba(208, 37, 45, 0.4), 0 15px 30px rgba(0, 0, 0, 0.08);
     }
     
     .brand-card[data-brand="edu"] {
-        background: linear-gradient(135deg, #1f3f58, #142e42);
+        box-shadow: 0 0 15px rgba(31, 63, 88, 0.4), 0 15px 30px rgba(0, 0, 0, 0.08);
     }
     
     .brand-card[data-brand="mietowa"] {
-        background: linear-gradient(135deg, #82b773, #6a9a5b);
+        box-shadow: 0 0 15px rgba(130, 183, 115, 0.4), 0 15px 30px rgba(0, 0, 0, 0.08);
     }
     
-    /* Efekt hover dla całej karty - równomierne powiększenie */
+    /* Efekt hover dla całej karty - mocniejszy GLOW i powiększenie */
     .brand-card:hover {
         transform: scale(1.08);
-        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
     }
     
-    /* Ikona / logo - biały kwadrat */
+    /* Mocniejszy GLOW na hover */
+    .brand-card[data-brand="alltera"]:hover {
+        box-shadow: 0 0 30px rgba(38, 142, 135, 0.8), 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .brand-card[data-brand="mnemo"]:hover {
+        box-shadow: 0 0 30px rgba(208, 37, 45, 0.8), 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .brand-card[data-brand="edu"]:hover {
+        box-shadow: 0 0 30px rgba(31, 63, 88, 0.8), 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .brand-card[data-brand="mietowa"]:hover {
+        box-shadow: 0 0 30px rgba(130, 183, 115, 0.8), 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Ikona / logo */
     .brand-icon {
         width: 180px;
         height: 180px;
@@ -111,15 +129,15 @@
         background: #FFFFFF;
         overflow: hidden;
         padding: 25px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
     
     .brand-card:hover .brand-icon {
         transform: scale(1.05);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
     
-    /* Logo - oryginalne kolory */
+    /* Logo */
     .brand-icon img {
         width: 100%;
         height: 100%;
@@ -137,21 +155,20 @@
         width: 100%;
     }
     
-    /* Tekst - biały dla kontrastu */
+    /* Tekst */
     .brand-card h3 {
         font-size: 18px;
         font-weight: 700;
-        color: #FFFFFF;
+        color: #1A2C2A;
         margin-bottom: 25px;
         line-height: 1.4;
         letter-spacing: -0.2px;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
     
-    /* Przycisk - biały z kolorowym tekstem */
+    /* Przycisk */
     .brand-btn {
-        background: #FFFFFF;
-        border: none;
+        background: transparent;
+        border: 2px solid;
         padding: 10px 24px;
         border-radius: 50px;
         font-weight: 700;
@@ -164,48 +181,55 @@
         transition: all 0.3s ease;
         width: auto;
         min-width: 130px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     
-    /* Kolory tekstu przycisków zgodne z markami */
+    /* Kolory przycisków */
     .brand-card[data-brand="alltera"] .brand-btn {
         color: #268e87;
+        border-color: #268e87;
+        background: transparent;
     }
     .brand-card[data-brand="alltera"] .brand-btn:hover {
         background: #268e87;
         color: white;
         transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 12px rgba(38, 142, 135, 0.3);
     }
     
     .brand-card[data-brand="mnemo"] .brand-btn {
         color: #d0252d;
+        border-color: #d0252d;
+        background: transparent;
     }
     .brand-card[data-brand="mnemo"] .brand-btn:hover {
         background: #d0252d;
         color: white;
         transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 12px rgba(208, 37, 45, 0.3);
     }
     
     .brand-card[data-brand="edu"] .brand-btn {
         color: #1f3f58;
+        border-color: #1f3f58;
+        background: transparent;
     }
     .brand-card[data-brand="edu"] .brand-btn:hover {
         background: #1f3f58;
         color: white;
         transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 12px rgba(31, 63, 88, 0.3);
     }
     
     .brand-card[data-brand="mietowa"] .brand-btn {
         color: #82b773;
+        border-color: #82b773;
+        background: transparent;
     }
     .brand-card[data-brand="mietowa"] .brand-btn:hover {
         background: #82b773;
         color: white;
         transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 12px rgba(130, 183, 115, 0.3);
     }
     
     /* Animacje rozsuwania - desktop (góra/dół) */
@@ -265,7 +289,20 @@
             gap: 18px;
         }
         
-        /* Kwadrat z logo na mobile */
+        /* GLOW na mobile - nieco słabszy dla lepszej czytelności */
+        .brand-card[data-brand="alltera"] {
+            box-shadow: 0 0 10px rgba(38, 142, 135, 0.3), 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        .brand-card[data-brand="mnemo"] {
+            box-shadow: 0 0 10px rgba(208, 37, 45, 0.3), 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        .brand-card[data-brand="edu"] {
+            box-shadow: 0 0 10px rgba(31, 63, 88, 0.3), 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        .brand-card[data-brand="mietowa"] {
+            box-shadow: 0 0 10px rgba(130, 183, 115, 0.3), 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
         .brand-icon {
             width: 90px;
             height: 90px;
@@ -286,15 +323,12 @@
             text-align: left;
         }
         
-        /* Tekst na mobile - biały */
         .brand-card h3 {
             font-size: 17px;
             margin-bottom: 12px;
             line-height: 1.3;
-            color: #FFFFFF;
         }
         
-        /* Przycisk na mobile */
         .brand-btn {
             padding: 8px 20px;
             font-size: 13px;
@@ -302,7 +336,6 @@
             display: inline-flex;
         }
         
-        /* Hover na mobile */
         .brand-card:hover {
             transform: scale(1.03);
         }
