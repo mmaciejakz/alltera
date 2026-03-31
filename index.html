@@ -17,7 +17,7 @@
         <!-- Karta 1: Alltera -->
         <div class="brand-card" data-brand="alltera">
             <div class="brand-icon">
-                <img src="ALLTERA_LOGO_ani.png" alt="Alltera">
+                <img src="ALLTERA_LOGO3_ani.png" alt="Alltera">
             </div>
             <div class="brand-content">
                 <h3>Biuro Tłumaczeń<br>ALLTERA</h3>
@@ -28,7 +28,7 @@
         <!-- Karta 2: Mnemo English -->
         <div class="brand-card" data-brand="mnemo">
             <div class="brand-icon">
-                <img src="MNEMO_ENGLISH_LOGO_ani.png" alt="Mnemo English">
+                <img src="MNEMO_ENGLISH_LOGO3_ani.png" alt="Mnemo English">
             </div>
             <div class="brand-content">
                 <h3>Kursy języka<br>MNEMO ENGLISH</h3>
@@ -39,7 +39,7 @@
         <!-- Karta 3: Edu -->
         <div class="brand-card" data-brand="edu">
             <div class="brand-icon">
-                <img src="EDU_LOGO_ani.png" alt="Edu">
+                <img src="EDU_LOGO3_ani.png" alt="Edu">
             </div>
             <div class="brand-content">
                 <h3>Kursy<br>EDU</h3>
@@ -50,7 +50,7 @@
         <!-- Karta 4: Miętowa Strona -->
         <div class="brand-card" data-brand="mietowa">
             <div class="brand-icon">
-                <img src="MIETOWA_STONA_LOGO_ani.png" alt="Miętowa Strona">
+                <img src="MIETOWA_STRONA_LOGO3_ani.png" alt="Miętowa Strona">
             </div>
             <div class="brand-content">
                 <h3>Sklep<br>MIĘTOWA STRONA</h3>
@@ -77,48 +77,48 @@
         align-items: center;
     }
     
-    /* Efekt hover dla całej karty - powiększenie */
+    /* Efekt hover dla całej karty - równomierne powiększenie */
     .brand-card:hover {
-        transform: scale(1.05) translateY(-5px);
-        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+        transform: scale(1.08);
+        box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
     }
     
     /* Kolory cieni na hover zgodne z marką */
     .brand-card[data-brand="alltera"]:hover {
-        box-shadow: 0 20px 35px rgba(38, 142, 135, 0.2);
+        box-shadow: 0 25px 40px rgba(38, 142, 135, 0.25);
     }
     .brand-card[data-brand="mnemo"]:hover {
-        box-shadow: 0 20px 35px rgba(208, 37, 45, 0.2);
+        box-shadow: 0 25px 40px rgba(208, 37, 45, 0.25);
     }
     .brand-card[data-brand="edu"]:hover {
-        box-shadow: 0 20px 35px rgba(31, 63, 88, 0.2);
+        box-shadow: 0 25px 40px rgba(31, 63, 88, 0.25);
     }
     .brand-card[data-brand="mietowa"]:hover {
-        box-shadow: 0 20px 35px rgba(130, 183, 115, 0.2);
+        box-shadow: 0 25px 40px rgba(130, 183, 115, 0.25);
     }
     
-    /* Ikona / logo - zajmuje 2/3 szerokości karty */
+    /* Ikona / logo - większy kwadrat */
     .brand-icon {
-        width: 66.66%;
+        width: 180px;
+        height: 180px;
         margin: 0 auto 25px;
-        border-radius: 24px;
+        border-radius: 28px;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         background: #FFFFFF;
         overflow: hidden;
-        padding: 18px;
-        aspect-ratio: 1 / 1;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        padding: 25px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         border: 1px solid rgba(0, 0, 0, 0.05);
     }
     
     .brand-card:hover .brand-icon {
-        transform: scale(1.02);
+        transform: scale(1.05);
     }
     
-    /* Logo - pełne rozmiary, oryginalne kolory */
+    /* Logo - większe */
     .brand-icon img {
         width: 100%;
         height: 100%;
@@ -128,7 +128,7 @@
     }
     
     .brand-card:hover .brand-icon img {
-        transform: scale(1.02);
+        transform: scale(1.03);
     }
     
     /* Zawartość tekstowa */
@@ -216,21 +216,21 @@
     /* Animacje rozsuwania - desktop (góra/dół) */
     @keyframes spreadUpDesktop {
         0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(-35px); opacity: 1; }
+        100% { transform: translateY(-45px); opacity: 1; }
     }
     @keyframes spreadDownDesktop {
         0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(35px); opacity: 1; }
+        100% { transform: translateY(45px); opacity: 1; }
     }
     
     /* Animacje rozsuwania - mobile (lewo/prawo) */
     @keyframes spreadLeftMobile {
         0% { transform: translateX(0); opacity: 1; }
-        100% { transform: translateX(-30px); opacity: 1; }
+        100% { transform: translateX(-35px); opacity: 1; }
     }
     @keyframes spreadRightMobile {
         0% { transform: translateX(0); opacity: 1; }
-        100% { transform: translateX(30px); opacity: 1; }
+        100% { transform: translateX(35px); opacity: 1; }
     }
     
     /* Klasy dla desktop */
@@ -253,7 +253,7 @@
     @media (max-width: 768px) {
         .brands-container {
             flex-direction: column !important;
-            gap: 18px !important;
+            gap: 20px !important;
             width: 100%;
             max-width: 100%;
             padding: 15px;
@@ -262,21 +262,22 @@
         .brand-card {
             width: 100%;
             max-width: 100%;
-            padding: 15px;
+            padding: 20px 18px;
             display: flex;
             flex-direction: row !important;
             align-items: center;
             text-align: left;
-            gap: 15px;
+            gap: 18px;
         }
         
+        /* Większy kwadrat z logo na mobile */
         .brand-icon {
-            width: 70px;
-            height: 70px;
+            width: 90px;
+            height: 90px;
             margin: 0;
             flex-shrink: 0;
-            padding: 12px;
-            aspect-ratio: 1 / 1;
+            padding: 18px;
+            border-radius: 22px;
         }
         
         .brand-icon img {
@@ -290,46 +291,49 @@
             text-align: left;
         }
         
+        /* Większy tekst na mobile */
         .brand-card h3 {
-            font-size: 15px;
-            margin-bottom: 10px;
+            font-size: 17px;
+            margin-bottom: 12px;
             line-height: 1.3;
         }
         
+        /* Większy przycisk na mobile */
         .brand-btn {
-            padding: 6px 16px;
-            font-size: 12px;
+            padding: 8px 20px;
+            font-size: 13px;
             min-width: auto;
             display: inline-flex;
         }
         
+        /* Hover na mobile - powiększenie karty */
         .brand-card:hover {
-            transform: scale(1.02) translateX(5px);
+            transform: scale(1.03);
         }
     }
     
     /* Dla bardzo małych ekranów */
     @media (max-width: 480px) {
         .brand-card {
-            padding: 12px;
-            gap: 12px;
+            padding: 18px 15px;
+            gap: 15px;
         }
         
         .brand-icon {
-            width: 55px;
-            height: 55px;
-            padding: 10px;
+            width: 75px;
+            height: 75px;
+            padding: 15px;
+            border-radius: 20px;
         }
         
         .brand-card h3 {
-            font-size: 13px;
-            margin-bottom: 8px;
+            font-size: 15px;
+            margin-bottom: 10px;
         }
         
         .brand-btn {
-            padding: 5px 12px;
-            font-size: 11px;
-            border-width: 1.5px;
+            padding: 7px 16px;
+            font-size: 12px;
         }
     }
 </style>
@@ -352,7 +356,7 @@
                 if (cards[2]) cards[2].classList.add('animate-left');
                 if (cards[3]) cards[3].classList.add('animate-right');
             } else {
-                // Na desktop: rozsuwanie góra/dół
+                // Na desktop: rozsuwanie góra/dół - zwiększone rozsunięcie
                 if (cards[0]) cards[0].classList.add('animate-up');
                 if (cards[1]) cards[1].classList.add('animate-down');
                 if (cards[2]) cards[2].classList.add('animate-up');
