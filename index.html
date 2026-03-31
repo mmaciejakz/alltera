@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- EKRAN POWITALNY - WYBÓR MARKI -->
+<!-- EKRAN POWITALNY - WYBÓR MARKI (POJAWIA SIĘ PRZY KAŻDYM WEJŚCIU) -->
 <div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #FFFFFF; z-index: 99999; display: flex; justify-content: center; align-items: center; flex-direction: column; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
     
     <!-- Tytuł opcjonalny -->
@@ -91,19 +91,8 @@
 </style>
 
 <script>
-    // EKRAN POWITALNY - ANIMACJA ROZSUWANIA I PRZEJŚCIA
+    // EKRAN POWITALNY - POJAWIA SIĘ PRZY KAŻDYM WEJŚCIU
     (function() {
-        // Sprawdzenie czy splash był już wyświetlony w tej sesji
-        if (sessionStorage.getItem('brandSplashShown')) {
-            // Jeśli był już pokazany, usuwamy go natychmiast
-            const splash = document.getElementById('brandSplash');
-            if (splash) splash.remove();
-            return;
-        }
-        
-        // Oznaczamy, że splash został wyświetlony w tej sesji
-        sessionStorage.setItem('brandSplashShown', 'true');
-        
         // Pobierz wszystkie karty
         const cards = document.querySelectorAll('.brand-card');
         const splashContainer = document.getElementById('brandSplash');
@@ -168,16 +157,8 @@
             }
         });
         
-        // Opcjonalnie: opóźnione automatyczne zniknięcie po 10 sekundach (jeśli użytkownik nie wybrał)
-        setTimeout(() => {
-            if (splashContainer && splashContainer.parentNode) {
-                // Jeśli po 10 sekundach splash nadal istnieje, usuń go płynnie
-                splashContainer.style.opacity = '0';
-                setTimeout(() => {
-                    if (splashContainer && splashContainer.parentNode) splashContainer.remove();
-                }, 600);
-            }
-        }, 10000);
+        // UWAGA: USUNĄŁEM AUTOMATYCZNE ZNIKANIE PO 10 SEKUNDACH
+        // Teraz splash zniknie TYLKO po kliknięciu w któryś z przycisków
         
     })();
 </script>
