@@ -12,7 +12,7 @@
 <div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); z-index: 99999; display: flex; justify-content: center; align-items: center; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
     
     <!-- Kontener na karty -->
-    <div class="brands-container" style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; align-items: center; position: relative; padding: 20px;">
+    <div class="brands-container" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center; align-items: center; position: relative; padding: 20px;">
         
         <!-- Karta 1: Alltera -->
         <div class="brand-card" data-brand="alltera">
@@ -55,71 +55,51 @@
 <style>
     /* Podstawowe style dla kart */
     .brand-card {
-        width: 320px;
+        width: 260px;
         background: #FFFFFF;
-        border-radius: 32px;
-        padding: 40px 30px;
+        border-radius: 28px;
+        padding: 30px 20px;
         text-align: center;
-        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
         transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         cursor: pointer;
         border: 1px solid rgba(0, 0, 0, 0.05);
-        position: relative;
     }
     
-    /* Efekt hover dla całej karty - powiększenie całej zawartości */
+    /* Efekt hover dla całej karty - powiększenie */
     .brand-card:hover {
         transform: scale(1.05) translateY(-5px);
-        box-shadow: 0 30px 45px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
     }
     
-    /* Kolory marki i efekty hover */
-    .brand-card[data-brand="alltera"] {
-        border-top: 4px solid #268e87;
-    }
+    /* Kolory cieni na hover zgodne z marką */
     .brand-card[data-brand="alltera"]:hover {
-        border-color: #268e87;
-        box-shadow: 0 30px 45px rgba(38, 142, 135, 0.2);
-    }
-    
-    .brand-card[data-brand="mnemo"] {
-        border-top: 4px solid #d0252d;
+        box-shadow: 0 20px 35px rgba(38, 142, 135, 0.2);
     }
     .brand-card[data-brand="mnemo"]:hover {
-        border-color: #d0252d;
-        box-shadow: 0 30px 45px rgba(208, 37, 45, 0.2);
-    }
-    
-    .brand-card[data-brand="edu"] {
-        border-top: 4px solid #1f3f58;
+        box-shadow: 0 20px 35px rgba(208, 37, 45, 0.2);
     }
     .brand-card[data-brand="edu"]:hover {
-        border-color: #1f3f58;
-        box-shadow: 0 30px 45px rgba(31, 63, 88, 0.2);
-    }
-    
-    .brand-card[data-brand="mietowa"] {
-        border-top: 4px solid #82b773;
+        box-shadow: 0 20px 35px rgba(31, 63, 88, 0.2);
     }
     .brand-card[data-brand="mietowa"]:hover {
-        border-color: #82b773;
-        box-shadow: 0 30px 45px rgba(130, 183, 115, 0.2);
+        box-shadow: 0 20px 35px rgba(130, 183, 115, 0.2);
     }
     
     /* Ikona / logo - zajmuje 2/3 szerokości karty */
     .brand-icon {
         width: 66.66%;
-        margin: 0 auto 30px;
-        border-radius: 28px;
+        margin: 0 auto 25px;
+        border-radius: 24px;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         background: #FFFFFF;
         overflow: hidden;
-        padding: 20px;
+        padding: 18px;
         aspect-ratio: 1 / 1;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(0, 0, 0, 0.05);
     }
     
@@ -142,30 +122,30 @@
     
     /* Tekst */
     .brand-card h3 {
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 700;
         color: #1A2C2A;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         line-height: 1.4;
-        letter-spacing: -0.3px;
+        letter-spacing: -0.2px;
     }
     
     /* Przycisk */
     .brand-btn {
         background: transparent;
         border: 2px solid;
-        padding: 12px 32px;
+        padding: 10px 24px;
         border-radius: 50px;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 14px;
         cursor: pointer;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        gap: 8px;
         transition: all 0.3s ease;
         width: auto;
-        min-width: 150px;
+        min-width: 130px;
     }
     
     /* Kolory przycisków */
@@ -178,7 +158,7 @@
         background: #268e87;
         color: white;
         transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(38, 142, 135, 0.3);
+        box-shadow: 0 5px 12px rgba(38, 142, 135, 0.3);
     }
     
     .brand-card[data-brand="mnemo"] .brand-btn {
@@ -190,7 +170,7 @@
         background: #d0252d;
         color: white;
         transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(208, 37, 45, 0.3);
+        box-shadow: 0 5px 12px rgba(208, 37, 45, 0.3);
     }
     
     .brand-card[data-brand="edu"] .brand-btn {
@@ -202,7 +182,7 @@
         background: #1f3f58;
         color: white;
         transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(31, 63, 88, 0.3);
+        box-shadow: 0 5px 12px rgba(31, 63, 88, 0.3);
     }
     
     .brand-card[data-brand="mietowa"] .brand-btn {
@@ -214,27 +194,27 @@
         background: #82b773;
         color: white;
         transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(130, 183, 115, 0.3);
+        box-shadow: 0 5px 12px rgba(130, 183, 115, 0.3);
     }
     
     /* Animacje rozsuwania - desktop (góra/dół) */
     @keyframes spreadUpDesktop {
         0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(-45px); opacity: 1; }
+        100% { transform: translateY(-35px); opacity: 1; }
     }
     @keyframes spreadDownDesktop {
         0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(45px); opacity: 1; }
+        100% { transform: translateY(35px); opacity: 1; }
     }
     
     /* Animacje rozsuwania - mobile (lewo/prawo) */
     @keyframes spreadLeftMobile {
         0% { transform: translateX(0); opacity: 1; }
-        100% { transform: translateX(-40px); opacity: 1; }
+        100% { transform: translateX(-30px); opacity: 1; }
     }
     @keyframes spreadRightMobile {
         0% { transform: translateX(0); opacity: 1; }
-        100% { transform: translateX(40px); opacity: 1; }
+        100% { transform: translateX(30px); opacity: 1; }
     }
     
     /* Klasy dla desktop */
@@ -257,41 +237,34 @@
     @media (max-width: 768px) {
         .brands-container {
             flex-direction: column !important;
-            gap: 25px !important;
+            gap: 20px !important;
             width: 100%;
-            max-width: 380px;
+            max-width: 300px;
         }
         
         .brand-card {
             width: 100%;
-            max-width: 340px;
-            padding: 35px 25px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 0;
+            max-width: 280px;
+            padding: 25px 20px;
         }
         
-        /* Na mobile logo zajmuje również 2/3 szerokości */
         .brand-icon {
             width: 66.66%;
-            margin: 0 auto 25px;
-            padding: 20px;
+            margin: 0 auto 20px;
+            padding: 15px;
         }
         
         .brand-card h3 {
-            font-size: 20px;
-            margin-bottom: 25px;
+            font-size: 16px;
+            margin-bottom: 20px;
         }
         
         .brand-btn {
-            padding: 10px 28px;
-            font-size: 15px;
-            min-width: 140px;
+            padding: 8px 20px;
+            font-size: 13px;
+            min-width: 120px;
         }
         
-        /* Hover na mobile - powiększenie karty */
         .brand-card:hover {
             transform: scale(1.03) translateY(-3px);
         }
@@ -300,34 +273,30 @@
     /* Dla bardzo małych ekranów */
     @media (max-width: 480px) {
         .brands-container {
-            max-width: 320px;
-            gap: 20px !important;
+            max-width: 280px;
+            gap: 18px !important;
         }
         
         .brand-card {
-            max-width: 300px;
-            padding: 30px 20px;
+            max-width: 260px;
+            padding: 22px 18px;
         }
         
         .brand-icon {
             width: 66.66%;
-            padding: 18px;
-            margin-bottom: 20px;
+            padding: 12px;
+            margin-bottom: 18px;
         }
         
         .brand-card h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 15px;
+            margin-bottom: 18px;
         }
         
         .brand-btn {
-            padding: 8px 24px;
-            font-size: 14px;
-            min-width: 130px;
-        }
-        
-        .brand-card:hover {
-            transform: scale(1.02) translateY(-2px);
+            padding: 7px 18px;
+            font-size: 12px;
+            min-width: 110px;
         }
     }
 </style>
