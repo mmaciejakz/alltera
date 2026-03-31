@@ -16,7 +16,7 @@
         
         <!-- Karta 1: Alltera -->
         <div class="brand-card" data-brand="alltera">
-            <div class="brand-icon" style="background: linear-gradient(135deg, #41807C, #2C5A57);">
+            <div class="brand-icon" style="background: #FFFFFF; box-shadow: 0 15px 25px -10px rgba(65, 128, 124, 0.2);">
                 <img src="ALLTERA_LOGO3_ani.png" alt="Alltera">
             </div>
             <h3>Biuro Tłumaczeń<br>ALLTERA</h3>
@@ -25,7 +25,7 @@
         
         <!-- Karta 2: Mnemo English -->
         <div class="brand-card" data-brand="mnemo">
-            <div class="brand-icon" style="background: linear-gradient(135deg, #2C7DA0, #1F5E7A);">
+            <div class="brand-icon" style="background: #FFFFFF; box-shadow: 0 15px 25px -10px rgba(44, 125, 160, 0.2);">
                 <img src="MNEMO_ENGLISH_LOGO3_ani.png" alt="Mnemo English">
             </div>
             <h3>Kursy języka<br>MNEMO ENGLISH</h3>
@@ -34,7 +34,7 @@
         
         <!-- Karta 3: Edu -->
         <div class="brand-card" data-brand="edu">
-            <div class="brand-icon" style="background: linear-gradient(135deg, #E9C46A, #D4A832);">
+            <div class="brand-icon" style="background: #FFFFFF; box-shadow: 0 15px 25px -10px rgba(233, 196, 106, 0.2);">
                 <img src="EDU_LOGO3_ani.png" alt="Edu">
             </div>
             <h3>Kursy<br>EDU</h3>
@@ -43,7 +43,7 @@
         
         <!-- Karta 4: Miętowa Strona -->
         <div class="brand-card" data-brand="mietowa">
-            <div class="brand-icon" style="background: linear-gradient(135deg, #9BBF7A, #7A9F5A);">
+            <div class="brand-icon" style="background: #FFFFFF; box-shadow: 0 15px 25px -10px rgba(155, 191, 122, 0.2);">
                 <img src="MIETOWA_STRONA_LOGO3_ani.png" alt="Miętowa Strona">
             </div>
             <h3>Sklep<br>MIĘTOWA STRONA</h3>
@@ -55,139 +55,160 @@
 <style>
     /* Podstawowe style dla kart */
     .brand-card {
-        width: 240px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 28px;
-        padding: 35px 20px;
+        width: 280px;
+        background: #FFFFFF;
+        border-radius: 32px;
+        padding: 35px 25px;
         text-align: center;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
         transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         cursor: pointer;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.05);
         position: relative;
-        overflow: hidden;
     }
     
-    .brand-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, transparent, currentColor, transparent);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    
+    /* Efekt hover dla całej karty */
     .brand-card:hover {
         transform: translateY(-12px);
-        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 30px 45px rgba(0, 0, 0, 0.12);
+        border-color: rgba(0, 0, 0, 0.1);
     }
     
-    .brand-card:hover .brand-btn {
-        transform: translateX(5px);
-        background: currentColor;
+    /* Kolorowa ramka na hover zgodna z marką */
+    .brand-card[data-brand="alltera"]:hover {
+        box-shadow: 0 30px 45px rgba(65, 128, 124, 0.15);
+        border-color: #41807C;
+    }
+    .brand-card[data-brand="mnemo"]:hover {
+        box-shadow: 0 30px 45px rgba(44, 125, 160, 0.15);
+        border-color: #2C7DA0;
+    }
+    .brand-card[data-brand="edu"]:hover {
+        box-shadow: 0 30px 45px rgba(233, 196, 106, 0.15);
+        border-color: #E9C46A;
+    }
+    .brand-card[data-brand="mietowa"]:hover {
+        box-shadow: 0 30px 45px rgba(155, 191, 122, 0.15);
+        border-color: #9BBF7A;
     }
     
-    /* Ikona / logo */
+    /* Ikona / logo - białe tło, oryginalne kolory logo */
     .brand-icon {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
         margin: 0 auto 25px;
-        border-radius: 24px;
+        border-radius: 28px;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        background: #FFFFFF;
+        overflow: hidden;
+        padding: 20px;
     }
     
     .brand-card:hover .brand-icon {
         transform: scale(1.05);
     }
     
+    /* Logo - pełne rozmiary, oryginalne kolory */
     .brand-icon img {
-        width: 55px;
-        height: auto;
-        filter: brightness(0) invert(1);
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         transition: transform 0.3s ease;
+        filter: none !important;
     }
     
     .brand-card:hover .brand-icon img {
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
     
     /* Tekst */
     .brand-card h3 {
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 20px;
+        font-weight: 700;
         color: #1A2C2A;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         line-height: 1.4;
-        letter-spacing: -0.2px;
+        letter-spacing: -0.3px;
     }
     
     /* Przycisk */
     .brand-btn {
         background: transparent;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 40px;
-        color: currentColor;
-        font-weight: 600;
-        font-size: 14px;
+        border: 2px solid;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 15px;
         cursor: pointer;
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
+        gap: 10px;
         transition: all 0.3s ease;
-        background: rgba(0, 0, 0, 0.05);
-        backdrop-filter: blur(5px);
+        width: auto;
+        min-width: 140px;
     }
     
-    /* Kolory przycisków i akcentów dla każdej karty */
-    .brand-card[data-brand="alltera"] {
-        color: #41807C;
-    }
+    /* Kolory przycisków i hover */
     .brand-card[data-brand="alltera"] .brand-btn {
         color: #41807C;
-        border: 1px solid rgba(65, 128, 124, 0.3);
+        border-color: #41807C;
+        background: transparent;
+    }
+    .brand-card[data-brand="alltera"] .brand-btn:hover {
+        background: #41807C;
+        color: white;
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(65, 128, 124, 0.3);
     }
     
-    .brand-card[data-brand="mnemo"] {
-        color: #2C7DA0;
-    }
     .brand-card[data-brand="mnemo"] .brand-btn {
         color: #2C7DA0;
-        border: 1px solid rgba(44, 125, 160, 0.3);
+        border-color: #2C7DA0;
+        background: transparent;
+    }
+    .brand-card[data-brand="mnemo"] .brand-btn:hover {
+        background: #2C7DA0;
+        color: white;
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(44, 125, 160, 0.3);
     }
     
-    .brand-card[data-brand="edu"] {
-        color: #E9C46A;
-    }
     .brand-card[data-brand="edu"] .brand-btn {
         color: #E9C46A;
-        border: 1px solid rgba(233, 196, 106, 0.3);
+        border-color: #E9C46A;
+        background: transparent;
+    }
+    .brand-card[data-brand="edu"] .brand-btn:hover {
+        background: #E9C46A;
+        color: #1A2C2A;
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(233, 196, 106, 0.3);
     }
     
-    .brand-card[data-brand="mietowa"] {
-        color: #9BBF7A;
-    }
     .brand-card[data-brand="mietowa"] .brand-btn {
         color: #9BBF7A;
-        border: 1px solid rgba(155, 191, 122, 0.3);
+        border-color: #9BBF7A;
+        background: transparent;
+    }
+    .brand-card[data-brand="mietowa"] .brand-btn:hover {
+        background: #9BBF7A;
+        color: #1A2C2A;
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(155, 191, 122, 0.3);
     }
     
     /* Animacje rozsuwania - desktop (góra/dół) */
     @keyframes spreadUpDesktop {
         0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(-35px); opacity: 1; }
+        100% { transform: translateY(-40px); opacity: 1; }
     }
     @keyframes spreadDownDesktop {
         0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(35px); opacity: 1; }
+        100% { transform: translateY(40px); opacity: 1; }
     }
     
     /* Animacje rozsuwania - mobile (lewo/prawo) */
@@ -222,13 +243,13 @@
             flex-direction: column !important;
             gap: 20px !important;
             width: 100%;
-            max-width: 320px;
+            max-width: 350px;
         }
         
         .brand-card {
             width: 100%;
-            max-width: 280px;
-            padding: 25px 20px;
+            max-width: 320px;
+            padding: 20px;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -237,14 +258,17 @@
         }
         
         .brand-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             margin: 0;
             flex-shrink: 0;
+            padding: 12px;
         }
         
         .brand-icon img {
-            width: 40px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         .brand-card h3 {
@@ -254,36 +278,29 @@
         }
         
         .brand-btn {
-            padding: 8px 16px;
+            padding: 8px 20px;
             font-size: 13px;
-            white-space: nowrap;
-            flex-shrink: 0;
+            min-width: 110px;
         }
         
         .brand-card:hover {
-            transform: translateX(5px) translateY(0);
-        }
-        
-        .brand-card:hover .brand-icon {
-            transform: scale(1.03);
+            transform: translateX(8px) translateY(0);
         }
     }
     
     /* Dla bardzo małych ekranów */
     @media (max-width: 480px) {
         .brand-card {
-            padding: 18px 15px;
+            padding: 15px;
             gap: 15px;
+            max-width: 290px;
         }
         
         .brand-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 18px;
-        }
-        
-        .brand-icon img {
-            width: 32px;
+            width: 65px;
+            height: 65px;
+            border-radius: 20px;
+            padding: 10px;
         }
         
         .brand-card h3 {
@@ -291,8 +308,9 @@
         }
         
         .brand-btn {
-            padding: 6px 12px;
+            padding: 6px 16px;
             font-size: 12px;
+            min-width: 95px;
         }
     }
 </style>
