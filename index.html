@@ -95,7 +95,7 @@
         height: 100% !important;
     }
     
-    /* MINI FOOTER STYLE - ZMNIEJSZONY */
+    /* MINI FOOTER STYLE */
     .splash-footer {
         width: 100%;
         padding: 12px 20px;
@@ -150,19 +150,19 @@
     
     /* Efekt GLOW na stałe - subtelny */
     .brand-card[data-brand="alltera"] {
-        box-shadow: 0 20px 35px rgba(38, 142, 135, 0.25), 0 0 0 1px rgba(38, 142, 135, 0.1);
+        box-shadow: 0 20px 35px rgba(38, 142, 135, 0.2), 0 0 0 1px rgba(38, 142, 135, 0.08);
     }
     
     .brand-card[data-brand="mnemo"] {
-        box-shadow: 0 20px 35px rgba(208, 37, 45, 0.25), 0 0 0 1px rgba(208, 37, 45, 0.1);
+        box-shadow: 0 20px 35px rgba(208, 37, 45, 0.2), 0 0 0 1px rgba(208, 37, 45, 0.08);
     }
     
     .brand-card[data-brand="edu"] {
-        box-shadow: 0 20px 35px rgba(31, 63, 88, 0.25), 0 0 0 1px rgba(31, 63, 88, 0.1);
+        box-shadow: 0 20px 35px rgba(31, 63, 88, 0.2), 0 0 0 1px rgba(31, 63, 88, 0.08);
     }
     
     .brand-card[data-brand="mietowa"] {
-        box-shadow: 0 20px 35px rgba(130, 183, 115, 0.25), 0 0 0 1px rgba(130, 183, 115, 0.1);
+        box-shadow: 0 20px 35px rgba(130, 183, 115, 0.2), 0 0 0 1px rgba(130, 183, 115, 0.08);
     }
     
     /* EFEKT KARUZELI - DRAMATYCZNE ZMIANY */
@@ -178,21 +178,21 @@
         z-index: 100;
     }
     
-    /* Mocny GLOW na hover */
+    /* Mocny GLOW na hover - ZMNIEJSZONY I MNIEJ INTENSYWNY */
     .brand-card[data-brand="alltera"]:hover {
-        box-shadow: 0 35px 60px rgba(38, 142, 135, 0.5), 0 0 0 2px rgba(38, 142, 135, 0.3);
+        box-shadow: 0 25px 45px rgba(38, 142, 135, 0.35), 0 0 0 2px rgba(38, 142, 135, 0.2);
     }
     
     .brand-card[data-brand="mnemo"]:hover {
-        box-shadow: 0 35px 60px rgba(208, 37, 45, 0.5), 0 0 0 2px rgba(208, 37, 45, 0.3);
+        box-shadow: 0 25px 45px rgba(208, 37, 45, 0.35), 0 0 0 2px rgba(208, 37, 45, 0.2);
     }
     
     .brand-card[data-brand="edu"]:hover {
-        box-shadow: 0 35px 60px rgba(31, 63, 88, 0.5), 0 0 0 2px rgba(31, 63, 88, 0.3);
+        box-shadow: 0 25px 45px rgba(31, 63, 88, 0.35), 0 0 0 2px rgba(31, 63, 88, 0.2);
     }
     
     .brand-card[data-brand="mietowa"]:hover {
-        box-shadow: 0 35px 60px rgba(130, 183, 115, 0.5), 0 0 0 2px rgba(130, 183, 115, 0.3);
+        box-shadow: 0 25px 45px rgba(130, 183, 115, 0.35), 0 0 0 2px rgba(130, 183, 115, 0.2);
     }
     
     /* Ikona / logo */
@@ -283,7 +283,7 @@
         background: #268e87;
         color: white;
         transform: translateX(8px);
-        box-shadow: 0 8px 20px rgba(38, 142, 135, 0.4);
+        box-shadow: 0 8px 20px rgba(38, 142, 135, 0.3);
     }
     
     .brand-card[data-brand="mnemo"] .brand-btn {
@@ -294,7 +294,7 @@
         background: #d0252d;
         color: white;
         transform: translateX(8px);
-        box-shadow: 0 8px 20px rgba(208, 37, 45, 0.4);
+        box-shadow: 0 8px 20px rgba(208, 37, 45, 0.3);
     }
     
     .brand-card[data-brand="edu"] .brand-btn {
@@ -305,7 +305,7 @@
         background: #1f3f58;
         color: white;
         transform: translateX(8px);
-        box-shadow: 0 8px 20px rgba(31, 63, 88, 0.4);
+        box-shadow: 0 8px 20px rgba(31, 63, 88, 0.3);
     }
     
     .brand-card[data-brand="mietowa"] .brand-btn {
@@ -316,7 +316,7 @@
         background: #82b773;
         color: white;
         transform: translateX(8px);
-        box-shadow: 0 8px 20px rgba(130, 183, 115, 0.4);
+        box-shadow: 0 8px 20px rgba(130, 183, 115, 0.3);
     }
     
     /* Animacje rozsuwania - desktop (góra/dół) */
@@ -386,7 +386,7 @@
             justify-content: center;
         }
         
-        /* MINI FOOTER na mobile - jeszcze mniejszy */
+        /* MINI FOOTER na mobile */
         .splash-footer {
             padding: 8px 15px;
         }
@@ -418,18 +418,32 @@
             z-index: 100;
         }
         
-        /* GLOW na mobile */
+        /* GLOW na hover mobile - zmniejszony */
+        .brand-card[data-brand="alltera"]:hover {
+            box-shadow: 0 15px 25px rgba(38, 142, 135, 0.3), 0 0 0 1px rgba(38, 142, 135, 0.15);
+        }
+        .brand-card[data-brand="mnemo"]:hover {
+            box-shadow: 0 15px 25px rgba(208, 37, 45, 0.3), 0 0 0 1px rgba(208, 37, 45, 0.15);
+        }
+        .brand-card[data-brand="edu"]:hover {
+            box-shadow: 0 15px 25px rgba(31, 63, 88, 0.3), 0 0 0 1px rgba(31, 63, 88, 0.15);
+        }
+        .brand-card[data-brand="mietowa"]:hover {
+            box-shadow: 0 15px 25px rgba(130, 183, 115, 0.3), 0 0 0 1px rgba(130, 183, 115, 0.15);
+        }
+        
+        /* GLOW na stałe mobile */
         .brand-card[data-brand="alltera"] {
-            box-shadow: 0 15px 25px rgba(38, 142, 135, 0.2), 0 0 0 1px rgba(38, 142, 135, 0.1);
+            box-shadow: 0 15px 25px rgba(38, 142, 135, 0.15), 0 0 0 1px rgba(38, 142, 135, 0.08);
         }
         .brand-card[data-brand="mnemo"] {
-            box-shadow: 0 15px 25px rgba(208, 37, 45, 0.2), 0 0 0 1px rgba(208, 37, 45, 0.1);
+            box-shadow: 0 15px 25px rgba(208, 37, 45, 0.15), 0 0 0 1px rgba(208, 37, 45, 0.08);
         }
         .brand-card[data-brand="edu"] {
-            box-shadow: 0 15px 25px rgba(31, 63, 88, 0.2), 0 0 0 1px rgba(31, 63, 88, 0.1);
+            box-shadow: 0 15px 25px rgba(31, 63, 88, 0.15), 0 0 0 1px rgba(31, 63, 88, 0.08);
         }
         .brand-card[data-brand="mietowa"] {
-            box-shadow: 0 15px 25px rgba(130, 183, 115, 0.2), 0 0 0 1px rgba(130, 183, 115, 0.1);
+            box-shadow: 0 15px 25px rgba(130, 183, 115, 0.15), 0 0 0 1px rgba(130, 183, 115, 0.08);
         }
         
         .brand-icon {
