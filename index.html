@@ -63,20 +63,20 @@
     <div class="splash-footer">
         <div class="footer-content">
             <div class="footer-info">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                 </svg>
                 <span>Szarych Szeregów 2A, 63-900 Rawicz</span>
             </div>
             <div class="footer-info">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
                 <span>509 938 897</span>
             </div>
             <div class="footer-info">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
@@ -95,12 +95,11 @@
         height: 100% !important;
     }
     
-    /* MINI FOOTER STYLE */
+    /* MINI FOOTER STYLE - ZMNIEJSZONY */
     .splash-footer {
         width: 100%;
-        padding: 20px 30px;
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
+        padding: 12px 20px;
+        background: rgba(255, 255, 255, 0.9);
         border-top: 1px solid rgba(0, 0, 0, 0.05);
         margin-top: auto;
     }
@@ -109,36 +108,24 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 40px;
+        gap: 30px;
         flex-wrap: wrap;
-        max-width: 900px;
+        max-width: 800px;
         margin: 0 auto;
     }
     
     .footer-info {
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        color: #4A5568;
-        transition: all 0.3s ease;
+        gap: 8px;
+        font-size: 12px;
+        color: #6B7280;
         font-family: 'Arial', sans-serif;
     }
     
     .footer-info svg {
         flex-shrink: 0;
-        color: #268e87;
-        transition: all 0.3s ease;
-    }
-    
-    .footer-info:hover {
-        color: #268e87;
-        transform: translateY(-2px);
-    }
-    
-    .footer-info:hover svg {
-        transform: scale(1.1);
-        color: #1f6e68;
+        color: #6B7280;
     }
     
     /* Podstawowe style dla kart - desktop */
@@ -399,21 +386,25 @@
             justify-content: center;
         }
         
-        /* MINI FOOTER na mobile */
+        /* MINI FOOTER na mobile - jeszcze mniejszy */
         .splash-footer {
-            padding: 15px 20px;
+            padding: 8px 15px;
         }
         
         .footer-content {
-            gap: 15px;
+            gap: 12px;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
         }
         
         .footer-info {
-            font-size: 12px;
-            width: 100%;
-            justify-content: flex-start;
+            font-size: 10px;
+            gap: 6px;
+        }
+        
+        .footer-info svg {
+            width: 12px;
+            height: 12px;
         }
         
         /* EFEKT KARUZELI NA MOBILE - PIONOWO Z PRZESUNIĘCIAMI W PRAWO/LEWO */
@@ -508,17 +499,17 @@
         }
         
         .splash-footer {
-            padding: 12px 15px;
+            padding: 6px 12px;
         }
         
         .footer-info {
-            font-size: 11px;
-            gap: 8px;
+            font-size: 9px;
+            gap: 5px;
         }
         
         .footer-info svg {
-            width: 14px;
-            height: 14px;
+            width: 10px;
+            height: 10px;
         }
         
         .brands-container:hover .brand-card:not(:hover) {
