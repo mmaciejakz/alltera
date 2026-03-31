@@ -19,8 +19,10 @@
             <div class="brand-icon">
                 <img src="ALLTERA_LOGO3_ani.png" alt="Alltera">
             </div>
-            <h3>Biuro Tłumaczeń<br>ALLTERA</h3>
-            <button class="brand-btn">Przejdź →</button>
+            <div class="brand-content">
+                <h3>Biuro Tłumaczeń<br>ALLTERA</h3>
+                <button class="brand-btn">Przejdź →</button>
+            </div>
         </div>
         
         <!-- Karta 2: Mnemo English -->
@@ -28,8 +30,10 @@
             <div class="brand-icon">
                 <img src="MNEMO_ENGLISH_LOGO3_ani.png" alt="Mnemo English">
             </div>
-            <h3>Kursy języka<br>MNEMO ENGLISH</h3>
-            <button class="brand-btn">Przejdź →</button>
+            <div class="brand-content">
+                <h3>Kursy języka<br>MNEMO ENGLISH</h3>
+                <button class="brand-btn">Przejdź →</button>
+            </div>
         </div>
         
         <!-- Karta 3: Edu -->
@@ -37,8 +41,10 @@
             <div class="brand-icon">
                 <img src="EDU_LOGO3_ani.png" alt="Edu">
             </div>
-            <h3>Kursy<br>EDU</h3>
-            <button class="brand-btn">Przejdź →</button>
+            <div class="brand-content">
+                <h3>Kursy<br>EDU</h3>
+                <button class="brand-btn">Przejdź →</button>
+            </div>
         </div>
         
         <!-- Karta 4: Miętowa Strona -->
@@ -46,14 +52,16 @@
             <div class="brand-icon">
                 <img src="MIETOWA_STRONA_LOGO3_ani.png" alt="Miętowa Strona">
             </div>
-            <h3>Sklep<br>MIĘTOWA STRONA</h3>
-            <button class="brand-btn">Przejdź →</button>
+            <div class="brand-content">
+                <h3>Sklep<br>MIĘTOWA STRONA</h3>
+                <button class="brand-btn">Przejdź →</button>
+            </div>
         </div>
     </div>
 </div>
 
 <style>
-    /* Podstawowe style dla kart */
+    /* Podstawowe style dla kart - desktop */
     .brand-card {
         width: 260px;
         background: #FFFFFF;
@@ -64,6 +72,9 @@
         transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         cursor: pointer;
         border: 1px solid rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     /* Efekt hover dla całej karty - powiększenie */
@@ -118,6 +129,11 @@
     
     .brand-card:hover .brand-icon img {
         transform: scale(1.02);
+    }
+    
+    /* Zawartość tekstowa */
+    .brand-content {
+        width: 100%;
     }
     
     /* Tekst */
@@ -237,66 +253,83 @@
     @media (max-width: 768px) {
         .brands-container {
             flex-direction: column !important;
-            gap: 20px !important;
+            gap: 18px !important;
             width: 100%;
-            max-width: 300px;
+            max-width: 100%;
+            padding: 15px;
         }
         
         .brand-card {
             width: 100%;
-            max-width: 280px;
-            padding: 25px 20px;
+            max-width: 100%;
+            padding: 15px;
+            display: flex;
+            flex-direction: row !important;
+            align-items: center;
+            text-align: left;
+            gap: 15px;
         }
         
         .brand-icon {
-            width: 66.66%;
-            margin: 0 auto 20px;
-            padding: 15px;
+            width: 70px;
+            height: 70px;
+            margin: 0;
+            flex-shrink: 0;
+            padding: 12px;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .brand-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .brand-content {
+            flex: 1;
+            text-align: left;
         }
         
         .brand-card h3 {
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 15px;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
         
         .brand-btn {
-            padding: 8px 20px;
-            font-size: 13px;
-            min-width: 120px;
+            padding: 6px 16px;
+            font-size: 12px;
+            min-width: auto;
+            display: inline-flex;
         }
         
         .brand-card:hover {
-            transform: scale(1.03) translateY(-3px);
+            transform: scale(1.02) translateX(5px);
         }
     }
     
     /* Dla bardzo małych ekranów */
     @media (max-width: 480px) {
-        .brands-container {
-            max-width: 280px;
-            gap: 18px !important;
-        }
-        
         .brand-card {
-            max-width: 260px;
-            padding: 22px 18px;
+            padding: 12px;
+            gap: 12px;
         }
         
         .brand-icon {
-            width: 66.66%;
-            padding: 12px;
-            margin-bottom: 18px;
+            width: 55px;
+            height: 55px;
+            padding: 10px;
         }
         
         .brand-card h3 {
-            font-size: 15px;
-            margin-bottom: 18px;
+            font-size: 13px;
+            margin-bottom: 8px;
         }
         
         .brand-btn {
-            padding: 7px 18px;
-            font-size: 12px;
-            min-width: 110px;
+            padding: 5px 12px;
+            font-size: 11px;
+            border-width: 1.5px;
         }
     }
 </style>
