@@ -8,118 +8,331 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- EKRAN POWITALNY - WYBÓR MARKI (POJAWIA SIĘ PRZY KAŻDYM WEJŚCIU, NIE ZNIKA AUTOMATYCZNIE) -->
-<div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #FFFFFF; z-index: 99999; display: flex; justify-content: center; align-items: center; flex-direction: column; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<!-- EKRAN POWITALNY - WYBÓR MARKI (RESPONSYWNY) -->
+<div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); z-index: 99999; display: flex; justify-content: center; align-items: center; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
     
-    <!-- Tytuł opcjonalny -->
-    <h2 style="font-family: 'Arial', sans-serif; font-weight: 300; color: #41807C; margin-bottom: 40px; letter-spacing: 2px;">Wybierz swoją markę</h2>
-    
-    <!-- Kontener na 4 karty -->
-    <div class="brands-container" style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; align-items: center; position: relative;">
+    <!-- Kontener na karty -->
+    <div class="brands-container" style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; align-items: center; position: relative; padding: 20px;">
         
-        <!-- Karta 1: Alltera (Biuro Tłumaczeń) -->
-        <div class="brand-card" data-brand="alltera" style="width: 220px; background: #F5F5F5; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
-            <div style="width: 100px; height: 100px; margin: 0 auto 20px; background: #41807C; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -5px rgba(65,128,124,0.3);">
-                <img src="logo_alltera.png" alt="Alltera" style="width: 60px; height: auto; filter: brightness(0) invert(1);">
+        <!-- Karta 1: Alltera -->
+        <div class="brand-card" data-brand="alltera">
+            <div class="brand-icon" style="background: linear-gradient(135deg, #41807C, #2C5A57);">
+                <img src="logo_alltera.png" alt="Alltera">
             </div>
-            <h3 style="font-size: 18px; color: #333; margin-bottom: 15px;">Biuro Tłumaczeń<br>ALLTERA</h3>
-            <button class="brand-btn" style="background: #41807C; border: none; padding: 10px 20px; border-radius: 40px; color: white; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">Przejdź na witrynę →</button>
+            <h3>Biuro Tłumaczeń<br>ALLTERA</h3>
+            <button class="brand-btn">Przejdź →</button>
         </div>
         
         <!-- Karta 2: Mnemo English -->
-        <div class="brand-card" data-brand="mnemo" style="width: 220px; background: #F5F5F5; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
-            <div style="width: 100px; height: 100px; margin: 0 auto 20px; background: #2C7DA0; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -5px rgba(44,125,160,0.3);">
-                <img src="logo_mnemo.png" alt="Mnemo English" style="width: 60px; height: auto; filter: brightness(0) invert(1);">
+        <div class="brand-card" data-brand="mnemo">
+            <div class="brand-icon" style="background: linear-gradient(135deg, #2C7DA0, #1F5E7A);">
+                <img src="logo_mnemo.png" alt="Mnemo English">
             </div>
-            <h3 style="font-size: 18px; color: #333; margin-bottom: 15px;">Kursy języka<br>MNEMO ENGLISH</h3>
-            <button class="brand-btn" style="background: #2C7DA0; border: none; padding: 10px 20px; border-radius: 40px; color: white; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">Przejdź na witrynę →</button>
+            <h3>Kursy języka<br>MNEMO ENGLISH</h3>
+            <button class="brand-btn">Przejdź →</button>
         </div>
         
         <!-- Karta 3: Edu -->
-        <div class="brand-card" data-brand="edu" style="width: 220px; background: #F5F5F5; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
-            <div style="width: 100px; height: 100px; margin: 0 auto 20px; background: #E9C46A; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -5px rgba(233,196,106,0.3);">
-                <img src="logo_edu.png" alt="Edu" style="width: 60px; height: auto; filter: brightness(0) invert(1);">
+        <div class="brand-card" data-brand="edu">
+            <div class="brand-icon" style="background: linear-gradient(135deg, #E9C46A, #D4A832);">
+                <img src="logo_edu.png" alt="Edu">
             </div>
-            <h3 style="font-size: 18px; color: #333; margin-bottom: 15px;">Kursy<br>EDU</h3>
-            <button class="brand-btn" style="background: #E9C46A; border: none; padding: 10px 20px; border-radius: 40px; color: #333; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">Przejdź na witrynę →</button>
+            <h3>Kursy<br>EDU</h3>
+            <button class="brand-btn">Przejdź →</button>
         </div>
         
         <!-- Karta 4: Miętowa Strona -->
-        <div class="brand-card" data-brand="mietowa" style="width: 220px; background: #F5F5F5; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
-            <div style="width: 100px; height: 100px; margin: 0 auto 20px; background: #9BBF7A; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -5px rgba(155,191,122,0.3);">
-                <img src="logo_mietowa.png" alt="Miętowa Strona" style="width: 60px; height: auto; filter: brightness(0) invert(1);">
+        <div class="brand-card" data-brand="mietowa">
+            <div class="brand-icon" style="background: linear-gradient(135deg, #9BBF7A, #7A9F5A);">
+                <img src="logo_mietowa.png" alt="Miętowa Strona">
             </div>
-            <h3 style="font-size: 18px; color: #333; margin-bottom: 15px;">Sklep<br>MIĘTOWA STRONA</h3>
-            <button class="brand-btn" style="background: #9BBF7A; border: none; padding: 10px 20px; border-radius: 40px; color: #333; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">Przejdź na witrynę →</button>
+            <h3>Sklep<br>MIĘTOWA STRONA</h3>
+            <button class="brand-btn">Przejdź →</button>
         </div>
     </div>
 </div>
 
 <style>
-    /* Styl dla kart - efekt hover */
+    /* Podstawowe style dla kart */
     .brand-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 240px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 28px;
+        padding: 35px 20px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        overflow: hidden;
     }
+    
+    .brand-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, currentColor, transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
     .brand-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 30px 45px -15px rgba(0,0,0,0.2);
+        transform: translateY(-12px);
+        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.12);
     }
+    
     .brand-card:hover .brand-btn {
+        transform: translateX(5px);
+        background: currentColor;
+    }
+    
+    /* Ikona / logo */
+    .brand-icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 25px;
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .brand-card:hover .brand-icon {
         transform: scale(1.05);
-        box-shadow: 0 5px 12px rgba(0,0,0,0.2);
     }
+    
+    .brand-icon img {
+        width: 55px;
+        height: auto;
+        filter: brightness(0) invert(1);
+        transition: transform 0.3s ease;
+    }
+    
+    .brand-card:hover .brand-icon img {
+        transform: scale(1.05);
+    }
+    
+    /* Tekst */
+    .brand-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1A2C2A;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        letter-spacing: -0.2px;
+    }
+    
+    /* Przycisk */
     .brand-btn {
-        transition: all 0.2s ease;
+        background: transparent;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 40px;
+        color: currentColor;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        background: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(5px);
     }
     
-    /* Animacja rozsuwania */
-    @keyframes spreadUp {
-        0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(-30px); opacity: 1; }
+    /* Kolory przycisków i akcentów dla każdej karty */
+    .brand-card[data-brand="alltera"] {
+        color: #41807C;
     }
-    @keyframes spreadDown {
-        0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(30px); opacity: 1; }
+    .brand-card[data-brand="alltera"] .brand-btn {
+        color: #41807C;
+        border: 1px solid rgba(65, 128, 124, 0.3);
     }
     
+    .brand-card[data-brand="mnemo"] {
+        color: #2C7DA0;
+    }
+    .brand-card[data-brand="mnemo"] .brand-btn {
+        color: #2C7DA0;
+        border: 1px solid rgba(44, 125, 160, 0.3);
+    }
+    
+    .brand-card[data-brand="edu"] {
+        color: #E9C46A;
+    }
+    .brand-card[data-brand="edu"] .brand-btn {
+        color: #E9C46A;
+        border: 1px solid rgba(233, 196, 106, 0.3);
+    }
+    
+    .brand-card[data-brand="mietowa"] {
+        color: #9BBF7A;
+    }
+    .brand-card[data-brand="mietowa"] .brand-btn {
+        color: #9BBF7A;
+        border: 1px solid rgba(155, 191, 122, 0.3);
+    }
+    
+    /* Animacje rozsuwania - desktop (góra/dół) */
+    @keyframes spreadUpDesktop {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-35px); opacity: 1; }
+    }
+    @keyframes spreadDownDesktop {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(35px); opacity: 1; }
+    }
+    
+    /* Animacje rozsuwania - mobile (lewo/prawo) */
+    @keyframes spreadLeftMobile {
+        0% { transform: translateX(0); opacity: 1; }
+        100% { transform: translateX(-35px); opacity: 1; }
+    }
+    @keyframes spreadRightMobile {
+        0% { transform: translateX(0); opacity: 1; }
+        100% { transform: translateX(35px); opacity: 1; }
+    }
+    
+    /* Klasy dla desktop */
     .animate-up {
-        animation: spreadUp 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+        animation: spreadUpDesktop 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
     }
     .animate-down {
-        animation: spreadDown 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+        animation: spreadDownDesktop 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+    }
+    
+    /* Klasy dla mobile */
+    .animate-left {
+        animation: spreadLeftMobile 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+    }
+    .animate-right {
+        animation: spreadRightMobile 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+    }
+    
+    /* ========== RESPONSYWNOŚĆ ========== */
+    @media (max-width: 768px) {
+        .brands-container {
+            flex-direction: column !important;
+            gap: 20px !important;
+            width: 100%;
+            max-width: 320px;
+        }
+        
+        .brand-card {
+            width: 100%;
+            max-width: 280px;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 20px;
+        }
+        
+        .brand-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0;
+            flex-shrink: 0;
+        }
+        
+        .brand-icon img {
+            width: 40px;
+        }
+        
+        .brand-card h3 {
+            font-size: 16px;
+            margin-bottom: 0;
+            flex: 1;
+        }
+        
+        .brand-btn {
+            padding: 8px 16px;
+            font-size: 13px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .brand-card:hover {
+            transform: translateX(5px) translateY(0);
+        }
+        
+        .brand-card:hover .brand-icon {
+            transform: scale(1.03);
+        }
+    }
+    
+    /* Dla bardzo małych ekranów */
+    @media (max-width: 480px) {
+        .brand-card {
+            padding: 18px 15px;
+            gap: 15px;
+        }
+        
+        .brand-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 18px;
+        }
+        
+        .brand-icon img {
+            width: 32px;
+        }
+        
+        .brand-card h3 {
+            font-size: 14px;
+        }
+        
+        .brand-btn {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
     }
 </style>
 
 <script>
-    // EKRAN POWITALNY - POJAWIA SIĘ PRZY KAŻDYM WEJŚCIU
+    // EKRAN POWITALNY - RESPONSYWNY Z RÓŻNYMI ANIMACJAMI
     (function() {
-        // Pobierz wszystkie karty
         const cards = document.querySelectorAll('.brand-card');
         const splashContainer = document.getElementById('brandSplash');
         
-        // Uruchom animację rozsuwania po załadowaniu
+        // Sprawdź czy jesteśmy na urządzeniu mobilnym
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        
+        // Uruchom odpowiednią animację rozsuwania
         setTimeout(() => {
-            // Rozsuń naprzemiennie: 1 w górę, 2 w dół, 3 w górę, 4 w dół
-            if (cards[0]) cards[0].classList.add('animate-up');
-            if (cards[1]) cards[1].classList.add('animate-down');
-            if (cards[2]) cards[2].classList.add('animate-up');
-            if (cards[3]) cards[3].classList.add('animate-down');
+            if (isMobile) {
+                // Na mobile: rozsuwanie lewo/prawo
+                if (cards[0]) cards[0].classList.add('animate-left');
+                if (cards[1]) cards[1].classList.add('animate-right');
+                if (cards[2]) cards[2].classList.add('animate-left');
+                if (cards[3]) cards[3].classList.add('animate-right');
+            } else {
+                // Na desktop: rozsuwanie góra/dół
+                if (cards[0]) cards[0].classList.add('animate-up');
+                if (cards[1]) cards[1].classList.add('animate-down');
+                if (cards[2]) cards[2].classList.add('animate-up');
+                if (cards[3]) cards[3].classList.add('animate-down');
+            }
         }, 100);
         
         // Funkcja przekierowania / zamknięcia animacji
         function redirectTo(brand) {
-            // Zatrzymaj ewentualne dalsze propagacje
             if (!splashContainer) return;
             
-            // Efekt zanikania
             splashContainer.style.opacity = '0';
             
             setTimeout(() => {
-                // Dla marki Alltera - po prostu usuń splash i pokaż stronę główną
                 if (brand === 'alltera') {
                     splashContainer.remove();
                 } 
-                // Dla pozostałych marek - przekieruj na podstrony
                 else if (brand === 'mnemo') {
                     window.location.href = '/mnemo-english.html';
                 }
@@ -130,25 +343,21 @@
                     window.location.href = '/mietowa-strona.html';
                 }
                 else {
-                    // Fallback - usuń splash
                     splashContainer.remove();
                 }
             }, 500);
         }
         
-        // Dodaj nasłuchiwanie na kliknięcia w karty i przyciski
-        cards.forEach((card, index) => {
+        // Nasłuchiwanie kliknięć
+        cards.forEach((card) => {
             const brand = card.getAttribute('data-brand');
             const btn = card.querySelector('.brand-btn');
             
-            // Kliknięcie w kartę
             card.addEventListener('click', (e) => {
-                // Zapobiegamy podwójnemu wywołaniu jeśli kliknięto w przycisk
                 if (e.target === btn || btn.contains(e.target)) return;
                 redirectTo(brand);
             });
             
-            // Kliknięcie w przycisk
             if (btn) {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -157,7 +366,31 @@
             }
         });
         
-        // ✅ USUNIĘTE WSZELKIE AUTOMATYCZNE ZNIKANIE
+        // Obsługa zmiany orientacji ekranu - odświeżenie animacji
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const newIsMobile = window.matchMedia('(max-width: 768px)').matches;
+                const currentClasses = ['animate-up', 'animate-down', 'animate-left', 'animate-right'];
+                
+                cards.forEach(card => {
+                    currentClasses.forEach(cls => card.classList.remove(cls));
+                });
+                
+                if (newIsMobile) {
+                    if (cards[0]) cards[0].classList.add('animate-left');
+                    if (cards[1]) cards[1].classList.add('animate-right');
+                    if (cards[2]) cards[2].classList.add('animate-left');
+                    if (cards[3]) cards[3].classList.add('animate-right');
+                } else {
+                    if (cards[0]) cards[0].classList.add('animate-up');
+                    if (cards[1]) cards[1].classList.add('animate-down');
+                    if (cards[2]) cards[2].classList.add('animate-up');
+                    if (cards[3]) cards[3].classList.add('animate-down');
+                }
+            }, 150);
+        });
         
     })();
 </script>
