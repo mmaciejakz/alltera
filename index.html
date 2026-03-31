@@ -305,8 +305,18 @@
             display: flex;
             flex-direction: row !important;
             align-items: center;
-            text-align: left;
+            text-align: center;
             gap: 20px;
+        }
+        
+        /* WYŚRODKOWANIE TEKSTU I PRZYCISKU - CENTROWANIE W POZOSTAŁEJ PRZESTRZENI */
+        .brand-content {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         
         /* EFEKT KARUZELI NA MOBILE - PIONOWO Z PRZESUNIĘCIAMI W PRAWO/LEWO */
@@ -353,14 +363,10 @@
             object-fit: contain;
         }
         
-        .brand-content {
-            flex: 1;
-            text-align: left;
-        }
-        
         .brand-card h3 {
             font-size: 16px;
             margin-bottom: 12px;
+            text-align: center;
         }
         
         .brand-btn {
