@@ -8,6 +8,179 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- EKRAN POWITALNY - WYBÓR MARKI -->
+<div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #FFFFFF; z-index: 99999; display: flex; justify-content: center; align-items: center; flex-direction: column; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+    
+    <!-- Tytuł opcjonalny -->
+    <h2 style="font-family: 'Arial', sans-serif; font-weight: 300; color: #41807C; margin-bottom: 40px; letter-spacing: 2px;">Wybierz swoją markę</h2>
+    
+    <!-- Kontener na 4 karty -->
+    <div class="brands-container" style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; align-items: center; position: relative;">
+        
+        <!-- Karta 1: Alltera (Biuro Tłumaczeń) -->
+        <div class="brand-card" data-brand="alltera" style="width: 220px; background: #F5F5F5; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
+            <div style="width: 100px; height: 100px; margin: 0 auto 20px; background: #41807C; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -5px rgba(65,128,124,0.3);">
+                <img src="logo_alltera.png" alt="Alltera" style="width: 60px; height: auto; filter: brightness(0) invert(1);">
+            </div>
+            <h3 style="font-size: 18px; color: #333; margin-bottom: 15px;">Biuro Tłumaczeń<br>ALLTERA</h3>
+            <button class="brand-btn" style="background: #41807C; border: none; padding: 10px 20px; border-radius: 40px; color: white; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">Przejdź na witrynę →</button>
+        </div>
+        
+        <!-- Karta 2: Mnemo English -->
+        <div class="brand-card" data-brand="mnemo" style="width: 220px; background: #F5F5F5; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
+            <div style="width: 100px; height: 100px; margin: 0 auto 20px; background: #2C7DA0; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -5px rgba(44,125,160,0.3);">
+                <img src="logo_mnemo.png" alt="Mnemo English" style="width: 60px; height: auto; filter: brightness(0) invert(1);">
+            </div>
+            <h3 style="font-size: 18px; color: #333; margin-bottom: 15px;">Kursy języka<br>MNEMO ENGLISH</h3>
+            <button class="brand-btn" style="background: #2C7DA0; border: none; padding: 10px 20px; border-radius: 40px; color: white; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">Przejdź na witrynę →</button>
+        </div>
+        
+        <!-- Karta 3: Edu -->
+        <div class="brand-card" data-brand="edu" style="width: 220px; background: #F5F5F5; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
+            <div style="width: 100px; height: 100px; margin: 0 auto 20px; background: #E9C46A; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -5px rgba(233,196,106,0.3);">
+                <img src="logo_edu.png" alt="Edu" style="width: 60px; height: auto; filter: brightness(0) invert(1);">
+            </div>
+            <h3 style="font-size: 18px; color: #333; margin-bottom: 15px;">Kursy<br>EDU</h3>
+            <button class="brand-btn" style="background: #E9C46A; border: none; padding: 10px 20px; border-radius: 40px; color: #333; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">Przejdź na witrynę →</button>
+        </div>
+        
+        <!-- Karta 4: Miętowa Strona -->
+        <div class="brand-card" data-brand="mietowa" style="width: 220px; background: #F5F5F5; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
+            <div style="width: 100px; height: 100px; margin: 0 auto 20px; background: #9BBF7A; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -5px rgba(155,191,122,0.3);">
+                <img src="logo_mietowa.png" alt="Miętowa Strona" style="width: 60px; height: auto; filter: brightness(0) invert(1);">
+            </div>
+            <h3 style="font-size: 18px; color: #333; margin-bottom: 15px;">Sklep<br>MIĘTOWA STRONA</h3>
+            <button class="brand-btn" style="background: #9BBF7A; border: none; padding: 10px 20px; border-radius: 40px; color: #333; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">Przejdź na witrynę →</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Styl dla kart - efekt hover */
+    .brand-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .brand-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 45px -15px rgba(0,0,0,0.2);
+    }
+    .brand-card:hover .brand-btn {
+        transform: scale(1.05);
+        box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    }
+    .brand-btn {
+        transition: all 0.2s ease;
+    }
+    
+    /* Animacja rozsuwania */
+    @keyframes spreadUp {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-30px); opacity: 1; }
+    }
+    @keyframes spreadDown {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(30px); opacity: 1; }
+    }
+    
+    .animate-up {
+        animation: spreadUp 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+    }
+    .animate-down {
+        animation: spreadDown 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+    }
+</style>
+
+<script>
+    // EKRAN POWITALNY - ANIMACJA ROZSUWANIA I PRZEJŚCIA
+    (function() {
+        // Sprawdzenie czy splash był już wyświetlony w tej sesji
+        if (sessionStorage.getItem('brandSplashShown')) {
+            // Jeśli był już pokazany, usuwamy go natychmiast
+            const splash = document.getElementById('brandSplash');
+            if (splash) splash.remove();
+            return;
+        }
+        
+        // Oznaczamy, że splash został wyświetlony w tej sesji
+        sessionStorage.setItem('brandSplashShown', 'true');
+        
+        // Pobierz wszystkie karty
+        const cards = document.querySelectorAll('.brand-card');
+        const splashContainer = document.getElementById('brandSplash');
+        
+        // Uruchom animację rozsuwania po załadowaniu
+        setTimeout(() => {
+            // Rozsuń naprzemiennie: 1 w górę, 2 w dół, 3 w górę, 4 w dół
+            if (cards[0]) cards[0].classList.add('animate-up');
+            if (cards[1]) cards[1].classList.add('animate-down');
+            if (cards[2]) cards[2].classList.add('animate-up');
+            if (cards[3]) cards[3].classList.add('animate-down');
+        }, 100);
+        
+        // Funkcja przekierowania / zamknięcia animacji
+        function redirectTo(brand) {
+            // Zatrzymaj ewentualne dalsze propagacje
+            if (!splashContainer) return;
+            
+            // Efekt zanikania
+            splashContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+                // Dla marki Alltera - po prostu usuń splash i pokaż stronę główną
+                if (brand === 'alltera') {
+                    splashContainer.remove();
+                } 
+                // Dla pozostałych marek - przekieruj na podstrony
+                else if (brand === 'mnemo') {
+                    window.location.href = '/mnemo-english.html';
+                }
+                else if (brand === 'edu') {
+                    window.location.href = '/edu-kursy.html';
+                }
+                else if (brand === 'mietowa') {
+                    window.location.href = '/mietowa-strona.html';
+                }
+                else {
+                    // Fallback - usuń splash
+                    splashContainer.remove();
+                }
+            }, 500);
+        }
+        
+        // Dodaj nasłuchiwanie na kliknięcia w karty i przyciski
+        cards.forEach((card, index) => {
+            const brand = card.getAttribute('data-brand');
+            const btn = card.querySelector('.brand-btn');
+            
+            // Kliknięcie w kartę
+            card.addEventListener('click', (e) => {
+                // Zapobiegamy podwójnemu wywołaniu jeśli kliknięto w przycisk
+                if (e.target === btn || btn.contains(e.target)) return;
+                redirectTo(brand);
+            });
+            
+            // Kliknięcie w przycisk
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    redirectTo(brand);
+                });
+            }
+        });
+        
+        // Opcjonalnie: opóźnione automatyczne zniknięcie po 10 sekundach (jeśli użytkownik nie wybrał)
+        setTimeout(() => {
+            if (splashContainer && splashContainer.parentNode) {
+                // Jeśli po 10 sekundach splash nadal istnieje, usuń go płynnie
+                splashContainer.style.opacity = '0';
+                setTimeout(() => {
+                    if (splashContainer && splashContainer.parentNode) splashContainer.remove();
+                }, 600);
+            }
+        }, 10000);
+        
+    })();
+</script>
     <header>
         <img src="logo.png" alt="LOGO" class="logo">
         <nav>
