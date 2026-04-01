@@ -35,17 +35,3 @@ acceptCookies.addEventListener('click', () => {
     localStorage.setItem('cookiesAccepted', 'true');
     cookieBanner.style.display = 'none';
 });
-
-// Zamknij banner po 10 sekundach jeśli użytkownik nie kliknie
-setTimeout(() => {
-    if (!localStorage.getItem('cookiesAccepted') && cookieBanner.style.display !== 'none') {
-        cookieBanner.style.opacity = '1';
-        cookieBanner.style.transition = 'opacity 1s ease';
-        setTimeout(() => {
-            cookieBanner.style.opacity = '0';
-            setTimeout(() => {
-                cookieBanner.style.display = 'none';
-            }, 1000);
-        }, 10000);
-    }
-}, 1000);
