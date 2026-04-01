@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alltera - Centrum Języków Obcych i Biuro Tłumaczeń</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- EKRAN POWITALNY - DESIGNERSKA KARUZELA Z BLOKADĄ SCROLLA I MINI FOOTEREM -->
+<div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); z-index: 99999; display: flex; justify-content: center; align-items: center; flex-direction: column; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+    
+    <!-- Główna zawartość - karty -->
+    <div class="brands-container" style="display: flex; gap: 35px; flex-wrap: wrap; justify-content: center; align-items: center; position: relative; padding: 40px; flex: 1;">
+        
+        <!-- Karta 1: Alltera -->
+        <div class="brand-card" data-brand="alltera">
+            <div class="brand-icon">
+                <img src="ALLTERA_LOGO_ani.png" alt="Alltera">
+            </div>
+            <div class="brand-content">
+                <h3>Biuro tłumaczeń</h3>
+                <button class="brand-btn">Przejdź →</button>
+            </div>
+        </div>
+        
+        <!-- Karta 2: Mnemo English -->
+        <div class="brand-card" data-brand="mnemo">
+            <div class="brand-icon">
+                <img src="MNEMO_ENGLISH_LOGO_ani.png" alt="Mnemo English">
+            </div>
+            <div class="brand-content">
+                <h3>Kursy języka<br>angielskiego</h3>
+                <button class="brand-btn">Przejdź →</button>
+            </div>
+        </div>
+        
+        <!-- Karta 3: Edu -->
+        <div class="brand-card" data-brand="edu">
+            <div class="brand-icon">
+                <img src="EDU_LOGO_ani.png" alt="Edu">
+            </div>
+            <div class="brand-content">
+                <h3>Szybkie czytanie<br>Techniki pamięci</h3>
+                <button class="brand-btn">Przejdź →</button>
+            </div>
+        </div>
+        
+        <!-- Karta 4: Miętowa Strona -->
+        <div class="brand-card" data-brand="mietowa">
+            <div class="brand-icon">
+                <img src="MIETOWA_STRONA_LOGO_ani.png" alt="Miętowa Strona">
+            </div>
+            <div class="brand-content">
+                <h3>Sklep</h3>
+                <button class="brand-btn">Przejdź →</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MINI FOOTER -->
+    <div class="splash-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Szarych Szeregów 2A, 63-900 Rawicz</span>
+            </div>
+            <div class="footer-info">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>509 938 897</span>
+            </div>
+            <div class="footer-info">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>office@alltera.pl</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Blokada scrolla dla body podczas wyświetlania splash */
+    body.splash-active {
+        overflow: hidden !important;
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    /* MINI FOOTER STYLE */
+    .splash-footer {
+        width: 100%;
+        padding: 12px 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        margin-top: auto;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .footer-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: #6B7280;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    .footer-info svg {
+        flex-shrink: 0;
+        color: #6B7280;
+    }
+    
+    /* Podstawowe style dla kart - desktop */
+    .brands-container {
+        transition: all 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+    }
+    
+    .brand-card {
+        width: 280px;
+        background: #FFFFFF;
+        border-radius: 32px;
+        padding: 35px 25px;
+        text-align: center;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+        will-change: transform, opacity;
+        position: relative;
+    }
+    
+    /* Efekt GLOW na stałe - subtelny */
+    .brand-card[data-brand="alltera"] {
+        box-shadow: 0 20px 35px rgba(38, 142, 135, 0.2), 0 0 0 1px rgba(38, 142, 135, 0.08);
+    }
+    
+    .brand-card[data-brand="mnemo"] {
+        box-shadow: 0 20px 35px rgba(208, 37, 45, 0.2), 0 0 0 1px rgba(208, 37, 45, 0.08);
+    }
+    
+    .brand-card[data-brand="edu"] {
+        box-shadow: 0 20px 35px rgba(31, 63, 88, 0.2), 0 0 0 1px rgba(31, 63, 88, 0.08);
+    }
+    
+    .brand-card[data-brand="mietowa"] {
+        box-shadow: 0 20px 35px rgba(130, 183, 115, 0.2), 0 0 0 1px rgba(130, 183, 115, 0.08);
+    }
+    
+    /* EFEKT KARUZELI - DRAMATYCZNE ZMIANY */
+    .brands-container:hover .brand-card:not(:hover) {
+        transform: scale(0.55) translateX(40px) rotate(2deg);
+        opacity: 0.2;
+        filter: none;
+    }
+    
+    /* Karta na którą najeżdżamy - spektakularne wyróżnienie */
+    .brand-card:hover {
+        transform: scale(1.35) translateY(-25px);
+        z-index: 100;
+    }
+    
+    /* Mocny GLOW na hover - ZMNIEJSZONY I MNIEJ INTENSYWNY */
+    .brand-card[data-brand="alltera"]:hover {
+        box-shadow: 0 25px 45px rgba(38, 142, 135, 0.35), 0 0 0 2px rgba(38, 142, 135, 0.2);
+    }
+    
+    .brand-card[data-brand="mnemo"]:hover {
+        box-shadow: 0 25px 45px rgba(208, 37, 45, 0.35), 0 0 0 2px rgba(208, 37, 45, 0.2);
+    }
+    
+    .brand-card[data-brand="edu"]:hover {
+        box-shadow: 0 25px 45px rgba(31, 63, 88, 0.35), 0 0 0 2px rgba(31, 63, 88, 0.2);
+    }
+    
+    .brand-card[data-brand="mietowa"]:hover {
+        box-shadow: 0 25px 45px rgba(130, 183, 115, 0.35), 0 0 0 2px rgba(130, 183, 115, 0.2);
+    }
+    
+    /* Ikona / logo */
+    .brand-icon {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 25px;
+        border-radius: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+        background: #F8F9FA;
+        overflow: hidden;
+        padding: 30px;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .brand-card:hover .brand-icon {
+        transform: scale(1.1);
+        background: #FFFFFF;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08), 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Logo */
+    .brand-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.4s ease;
+        filter: none !important;
+    }
+    
+    .brand-card:hover .brand-icon img {
+        transform: scale(1.05);
+    }
+    
+    /* Zawartość tekstowa */
+    .brand-content {
+        width: 100%;
+        transition: all 0.4s ease;
+    }
+    
+    /* Tekst */
+    .brand-card h3 {
+        font-size: 19px;
+        font-weight: 700;
+        color: #1A2C2A;
+        margin-bottom: 25px;
+        line-height: 1.4;
+        letter-spacing: -0.2px;
+        transition: all 0.4s ease;
+    }
+    
+    .brand-card:hover h3 {
+        transform: scale(1.05);
+        color: #000;
+    }
+    
+    /* Przycisk */
+    .brand-btn {
+        background: transparent;
+        border: 2px solid;
+        padding: 12px 28px;
+        border-radius: 60px;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        width: auto;
+        min-width: 140px;
+    }
+    
+    .brand-card:hover .brand-btn {
+        transform: scale(1.05);
+    }
+    
+    /* Kolory przycisków */
+    .brand-card[data-brand="alltera"] .brand-btn {
+        color: #268e87;
+        border-color: #268e87;
+    }
+    .brand-card[data-brand="alltera"] .brand-btn:hover {
+        background: #268e87;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(38, 142, 135, 0.3);
+    }
+    
+    .brand-card[data-brand="mnemo"] .brand-btn {
+        color: #d0252d;
+        border-color: #d0252d;
+    }
+    .brand-card[data-brand="mnemo"] .brand-btn:hover {
+        background: #d0252d;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(208, 37, 45, 0.3);
+    }
+    
+    .brand-card[data-brand="edu"] .brand-btn {
+        color: #1f3f58;
+        border-color: #1f3f58;
+    }
+    .brand-card[data-brand="edu"] .brand-btn:hover {
+        background: #1f3f58;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(31, 63, 88, 0.3);
+    }
+    
+    .brand-card[data-brand="mietowa"] .brand-btn {
+        color: #82b773;
+        border-color: #82b773;
+    }
+    .brand-card[data-brand="mietowa"] .brand-btn:hover {
+        background: #82b773;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(130, 183, 115, 0.3);
+    }
+    
+    /* Animacje rozsuwania - desktop (góra/dół) */
+    @keyframes spreadUpDesktop {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-50px); opacity: 1; }
+    }
+    @keyframes spreadDownDesktop {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(50px); opacity: 1; }
+    }
+    
+    /* Animacje rozsuwania - mobile (lewo/prawo) */
+    @keyframes spreadLeftMobile {
+        0% { transform: translateX(0); opacity: 1; }
+        100% { transform: translateX(-40px); opacity: 1; }
+    }
+    @keyframes spreadRightMobile {
+        0% { transform: translateX(0); opacity: 1; }
+        100% { transform: translateX(40px); opacity: 1; }
+    }
+    
+    /* Klasy dla desktop */
+    .animate-up {
+        animation: spreadUpDesktop 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+    }
+    .animate-down {
+        animation: spreadDownDesktop 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+    }
+    
+    /* Klasy dla mobile */
+    .animate-left {
+        animation: spreadLeftMobile 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+    }
+    .animate-right {
+        animation: spreadRightMobile 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+    }
+    
+    /* ========== RESPONSYWNOŚĆ ========== */
+    @media (max-width: 768px) {
+        .brands-container {
+            flex-direction: column !important;
+            gap: 25px !important;
+            width: 100%;
+            max-width: 100%;
+            padding: 20px;
+        }
+        
+        .brand-card {
+            width: 100%;
+            max-width: 320px;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: row !important;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+        
+        /* WYŚRODKOWANIE TEKSTU I PRZYCISKU - CENTROWANIE W POZOSTAŁEJ PRZESTRZENI */
+        .brand-content {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* MINI FOOTER na mobile */
+        .splash-footer {
+            padding: 8px 15px;
+        }
+        
+        .footer-content {
+            gap: 12px;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-info {
+            font-size: 10px;
+            gap: 6px;
+        }
+        
+        .footer-info svg {
+            width: 12px;
+            height: 12px;
+        }
+        
+        /* EFEKT KARUZELI NA MOBILE - PIONOWO Z PRZESUNIĘCIAMI W PRAWO/LEWO */
+        .brands-container:hover .brand-card:not(:hover) {
+            transform: scale(0.7) translateX(30px) rotate(1deg);
+            opacity: 0.25;
+        }
+        
+        .brand-card:hover {
+            transform: scale(1.12) translateX(-8px);
+            z-index: 100;
+        }
+        
+        /* GLOW na hover mobile - zmniejszony */
+        .brand-card[data-brand="alltera"]:hover {
+            box-shadow: 0 15px 25px rgba(38, 142, 135, 0.3), 0 0 0 1px rgba(38, 142, 135, 0.15);
+        }
+        .brand-card[data-brand="mnemo"]:hover {
+            box-shadow: 0 15px 25px rgba(208, 37, 45, 0.3), 0 0 0 1px rgba(208, 37, 45, 0.15);
+        }
+        .brand-card[data-brand="edu"]:hover {
+            box-shadow: 0 15px 25px rgba(31, 63, 88, 0.3), 0 0 0 1px rgba(31, 63, 88, 0.15);
+        }
+        .brand-card[data-brand="mietowa"]:hover {
+            box-shadow: 0 15px 25px rgba(130, 183, 115, 0.3), 0 0 0 1px rgba(130, 183, 115, 0.15);
+        }
+        
+        /* GLOW na stałe mobile */
+        .brand-card[data-brand="alltera"] {
+            box-shadow: 0 15px 25px rgba(38, 142, 135, 0.15), 0 0 0 1px rgba(38, 142, 135, 0.08);
+        }
+        .brand-card[data-brand="mnemo"] {
+            box-shadow: 0 15px 25px rgba(208, 37, 45, 0.15), 0 0 0 1px rgba(208, 37, 45, 0.08);
+        }
+        .brand-card[data-brand="edu"] {
+            box-shadow: 0 15px 25px rgba(31, 63, 88, 0.15), 0 0 0 1px rgba(31, 63, 88, 0.08);
+        }
+        .brand-card[data-brand="mietowa"] {
+            box-shadow: 0 15px 25px rgba(130, 183, 115, 0.15), 0 0 0 1px rgba(130, 183, 115, 0.08);
+        }
+        
+        .brand-icon {
+            width: 85px;
+            height: 85px;
+            margin: 0;
+            flex-shrink: 0;
+            padding: 15px;
+            border-radius: 24px;
+        }
+        
+        .brand-card:hover .brand-icon {
+            transform: scale(1.08);
+        }
+        
+        .brand-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .brand-card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .brand-btn {
+            padding: 8px 20px;
+            font-size: 12px;
+            min-width: 120px;
+        }
+        
+        .brand-card:hover h3 {
+            transform: scale(1.03);
+        }
+        
+        .brand-card:hover .brand-btn {
+            transform: scale(1.03);
+        }
+    }
+    
+    /* Dla bardzo małych ekranów */
+    @media (max-width: 480px) {
+        .brand-card {
+            max-width: 290px;
+            padding: 20px 15px;
+            gap: 15px;
+        }
+        
+        .brand-icon {
+            width: 70px;
+            height: 70px;
+            padding: 12px;
+            border-radius: 20px;
+        }
+        
+        .brand-card h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .brand-btn {
+            padding: 6px 16px;
+            font-size: 11px;
+            min-width: 100px;
+        }
+        
+        .splash-footer {
+            padding: 6px 12px;
+        }
+        
+        .footer-info {
+            font-size: 9px;
+            gap: 5px;
+        }
+        
+        .footer-info svg {
+            width: 10px;
+            height: 10px;
+        }
+        
+        .brands-container:hover .brand-card:not(:hover) {
+            transform: scale(0.75) translateX(20px);
+            opacity: 0.3;
+        }
+        
+        .brand-card:hover {
+            transform: scale(1.1) translateX(-5px);
+        }
+    }
+</style>
+
+<script>
+    // EKRAN POWITALNY - DESIGNERSKA KARUZELA Z BLOKADĄ SCROLLA
+    (function() {
+        const cards = document.querySelectorAll('.brand-card');
+        const splashContainer = document.getElementById('brandSplash');
+        
+        // BLOKADA SCROLLA - DODAJEMY KLASĘ DO BODY
+        document.body.classList.add('splash-active');
+        
+        // Sprawdź czy jesteśmy na urządzeniu mobilnym
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        
+        // Uruchom odpowiednią animację rozsuwania
+        setTimeout(() => {
+            if (isMobile) {
+                // Na mobile: rozsuwanie lewo/prawo
+                if (cards[0]) cards[0].classList.add('animate-left');
+                if (cards[1]) cards[1].classList.add('animate-right');
+                if (cards[2]) cards[2].classList.add('animate-left');
+                if (cards[3]) cards[3].classList.add('animate-right');
+            } else {
+                // Na desktop: rozsuwanie góra/dół
+                if (cards[0]) cards[0].classList.add('animate-up');
+                if (cards[1]) cards[1].classList.add('animate-down');
+                if (cards[2]) cards[2].classList.add('animate-up');
+                if (cards[3]) cards[3].classList.add('animate-down');
+            }
+        }, 100);
+        
+        // Funkcja przekierowania / zamknięcia animacji
+        function redirectTo(brand) {
+            if (!splashContainer) return;
+            
+            splashContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+                // USUWAMY BLOKADĘ SCROLLA PRZED USUNIĘCIEM SPLASH LUB PRZEKIEROWANIEM
+                document.body.classList.remove('splash-active');
+                
+                if (brand === 'alltera') {
+                    splashContainer.remove();
+                    // Przywracamy normalny scroll po usunięciu splash
+                    document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.width = '';
+                    document.body.style.height = '';
+                } 
+                else if (brand === 'mnemo') {
+                    window.location.href = '/mnemo-english.html';
+                }
+                else if (brand === 'edu') {
+                    window.location.href = '/edu-kursy.html';
+                }
+                else if (brand === 'mietowa') {
+                    window.location.href = '/mietowa-strona.html';
+                }
+                else {
+                    splashContainer.remove();
+                    document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.width = '';
+                    document.body.style.height = '';
+                }
+            }, 500);
+        }
+        
+        // Nasłuchiwanie kliknięć
+        cards.forEach((card) => {
+            const brand = card.getAttribute('data-brand');
+            const btn = card.querySelector('.brand-btn');
+            
+            card.addEventListener('click', (e) => {
+                if (e.target === btn || btn.contains(e.target)) return;
+                redirectTo(brand);
+            });
+            
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    redirectTo(brand);
+                });
+            }
+        });
+        
+        // Obsługa zmiany orientacji ekranu - odświeżenie animacji
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const newIsMobile = window.matchMedia('(max-width: 768px)').matches;
+                const currentClasses = ['animate-up', 'animate-down', 'animate-left', 'animate-right'];
+                
+                cards.forEach(card => {
+                    currentClasses.forEach(cls => card.classList.remove(cls));
+                });
+                
+                if (newIsMobile) {
+                    if (cards[0]) cards[0].classList.add('animate-left');
+                    if (cards[1]) cards[1].classList.add('animate-right');
+                    if (cards[2]) cards[2].classList.add('animate-left');
+                    if (cards[3]) cards[3].classList.add('animate-right');
+                } else {
+                    if (cards[0]) cards[0].classList.add('animate-up');
+                    if (cards[1]) cards[1].classList.add('animate-down');
+                    if (cards[2]) cards[2].classList.add('animate-up');
+                    if (cards[3]) cards[3].classList.add('animate-down');
+                }
+            }, 150);
+        });
+        
+    })();
+</script>
+    <header>
+        <img src="logo.png" alt="LOGO" class="logo">
+        <nav>
+            <a href="#" onclick="localStorage.clear(); sessionStorage.clear(); location.reload(); return false;"><b>Home</b></a>
+            <a href="#about"><b>O firmie</b></a>
+            <a href="#translations"><b>Biuro Tłumaczeń</b></a>
+            <a href="#services"><b>Zakres Usług</b></a>
+            <a href="#languages"><b>Języki</b></a>
+            <a href="#pricing"><b>Wycena</b></a>
+            <a href="#contact"><b>Kontakt</b></a>
+        </nav>
+    </header>
+
+    <section id="about" class="fade-in">
+        <img src="ofirmie.png" alt="Biuro Tłumaczeń Alltera" class="about-image">
+        <div class="about-box">
+            <h2>O Firmie</h2>
+            <p>Biuro Tłumaczeń ALLTERA współpracuje z tłumaczami wielu języków europejskich. Nasi tłumacze to profesjonaliści z wieloletnim doświadczeniem, bogatą wiedzą i pasją do pracy. Jesteśmy otwarci na nowe wyzwania.</p>
+            <a href="#contact" class="btn scroll-to-contact"><b>Skontaktuj się</b></a>
+        </div>
+    </section>
+
+    <section id="translations" class="fade-in">
+        <h3>Biuro Tłumaczeń</h3>
+        <p>Biuro Tłumaczeń ALLTERA współpracuje z tłumaczami wielu języków europejskich. Nasi tłumacze to profesjonaliści z wieloletnim doświadczeniem, bogatą wiedzą i pasją do pracy. Jesteśmy otwarci na nowe wyzwania.</p>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header"><b>Jakie wykonujemy tłumaczenia?</b></div>
+                <div class="accordion-content"> • Tłumaczenia zwykłe, tłumaczenia uwierzytelnione (przysięgłe) a także tłumaczenia specjalistyczne, techniczne i literackie.<br> • Tłumaczenia zwykłe i tłumaczenia przysięgłe</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header"><b>Jak możesz dostarczyć tłumaczenie?</b></div>
+                <div class="accordion-content"> • Drogą e-mail pod adresem: office@alltera.pl<br> • Osobiście do administracji biura</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header"><b>Jak możesz odebrać tłumaczenie?</b></div>
+                <div class="accordion-content"> • Drogą e-mail na wskazany przez Ciebie adres e-mail<br> • Drogą pocztową pod podany podczas zlecenia adres do wysyłki (doliczamy koszt wysyłki)<br> • Osobiście w administracji biura</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="fade-in">
+        <div class="services-grid">
+            <div>
+                <h3>Zakres naszych usług</h3>
+                <p>Oferujemy tłumaczenia zwykłe, uwierzytelnione (tzw. przysięgłe), specjalistyczne w wielu zakresach tematycznych. Specjalizujemy się w takich dziedzinach jak: <b>rolnictwo, produkcja spożywcza, motoryzacja, mechanika, energetyka, elektronika, budownictwo, medycyna, farmacja, IT, biznes, prawo, marketing, dietetyka i produkcja spożywcza, edukacja, turystyka, kultura, teksty literackie i wiele innych.</b></p>
+            </div>
+            <div>
+                <h3>Indywidualne podejście do klientów</h3>
+                <p>Dostosowujemy poszczególne zlecenia do znajomości branż i specjalizacji tłumaczy. Zapewniamy indywidualne podejście do klienta. Nie pozostawiamy żadnych niejasności – wszelkie wątpliwości wyjaśniamy na bieżąco.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="languages" class="fade-in">
+        <h3>Jakie języki tłumaczymy?</h3>
+        <div class="services-grid">
+            <div>
+                <p>Polski, angielski, rosyjski, niemiecki, ukraiński, włoski, hiszpański, francuski, czeski, litewski, łotewski, niderlandzki, duński, szwedzki, fiński, norweski, serbski, chorwacki, rumuński, węgierski, arabski.</p>
+            </div>
+            <div>
+                <p><strong>NIE MA TU JĘZYKA, KTÓREGO SZUKASZ?</strong></p>
+                <p>Jeżeli przedstawiona lista nie zawiera języka, który aktualnie Cię interesuje – prosimy o kontakt. Dołożymy wszelkich starań, aby znaleźć dla Ciebie najlepszą ofertę.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="fade-in">
+        <h3>Wycena tłumaczeń</h3>
+        <div class="pricing-grid">
+            <p>Prosimy o kontakt w celu uzyskania wyceny tłumaczenia. Pamiętaj, że tłumaczenia rozliczane są według ogólnie przyjętych stron obliczeniowych. Wartość zlecenia zostaje określona przed przystąpieniem do jego realizacji.<br><br><strong>*UWAGA:</strong> W przypadku jeżeli jest to niemożliwe (np. dokument odręczny lub nieedytowalny) – określana jest orientacyjna wartość, a ostateczna kalkulacja odbywa się na podstawie faktycznej ilości stron obliczeniowych w wykonanym tłumaczeniu.</p>
+            <div>
+                <div class="ordinary">
+                    <p><strong>JEDNA STRONA OBLICZENIOWA TŁUMACZEŃ ZWYKŁYCH TO:</strong><br>1800 znaków ze spacjami</p>
+                </div>
+                <div class="certified">
+                    <p><strong>JEDNA STRONA OBLICZENIOWA TŁUMACZEŃ UWIERZYTELNIONYCH TO:</strong><br>1125 znaków ze spacjami</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section fade-in">
+        <iframe class="map-bg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.5014622053377!2d16.856729176327597!3d51.60864987183655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47057beb0e3ec77b%3A0x4986b83ce9d10eb5!2sCentrum%20J%C4%99zyk%C3%B3w%20Obcych%20i%20Biuro%20T%C5%82umacze%C5%84%20ALLTERA!5e1!3m2!1spl!2spl!4v1742680158018!5m2!1spl!2spl" allowfullscreen="" loading="lazy"></iframe>
+        <div class="contact-box">
+            <p>Adres:<br>Szarych Szeregów 2A, 63-900 Rawicz<br>Tel.:<br> 509 938 897<br>E-mail:<br>office@alltera.pl</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Tłumaczenia uwierzytelnione (tłumaczenia przysięgłe) są wymagane w takich sytuacjach jak na przykład składanie dokumentów w urzędach, wnioskowania o kredyt bankowy, w sprawach sądowych i procedurach ubezpieczeniowych.<br><br>Tłumaczenia specjalistyczne, takie jak artykuły naukowe, opinie prawne, dokumentacja medyczna, a także teksty techniczne wymagają szczególnej uwagi tłumacza, a nieraz również dodatkowych konsultacji ze specjalistami w danej dziedzinie. Biorąc pod uwagę dodatkowe nakłady pracy, czasu i konsultacji ceny tłumaczeń specjalistycznych są zawsze wyższe niż koszt tłumaczeń dokumentów standardowych.<br><br>ALLTERA.PL copyright © 2021. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>Ta strona używa plików cookies w celu poprawnego działania. Klikając "Akceptuję", zgadzasz się na ich użycie zgodnie z naszą Polityką Prywatności.</p>
+        <button id="acceptCookies">Akceptuję</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
