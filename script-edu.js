@@ -11,14 +11,26 @@ document.querySelectorAll('.accordion-header').forEach(header => {
 // Płynne przewijanie z offsetem dla nawigacji i przycisku "Skontaktuj się"
 document.querySelectorAll('nav a, .scroll-to-contact').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        const headerHeight = document.querySelector('header').offsetHeight;
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
+        const href = this.getAttribute('href');
+        
+        // Jeśli link prowadzi na zewnątrz lub jest pełnym URL, nie blokuj
+        if (href.startsWith('http') || href.startsWith('https') || href === '/') {
+            return; // pozwól na normalne działanie linku
+        }
+        
+        // Jeśli to kotwica (#something) na tej samej stronie
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
     });
 });
 
