@@ -11,7 +11,7 @@
 <!-- EKRAN POWITALNY - DESIGNERSKA KARUZELA Z BLOKADĄ SCROLLA I MINI HEADEREM ORAZ MINI FOOTEREM -->
 <div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); z-index: 99999; display: flex; justify-content: center; align-items: center; flex-direction: column; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
     
-    <!-- MINI HEADER - PRZEZROCZYSTY -->
+    <!-- MINI HEADER -->
     <div class="splash-header" id="splashHeader">
         <div class="header-content">
             <div class="header-info">
@@ -104,14 +104,13 @@
         height: 100% !important;
     }
     
-    /* MINI HEADER STYLE - PRZEZROCZYSTY BEZ RAMKI */
+    /* MINI HEADER STYLE */
     .splash-header {
         width: 100%;
         padding: 20px 20px 10px 20px;
         background: transparent;
         flex-shrink: 0;
         margin-top: auto;
-        transition: padding-top 0.1s ease;
     }
     
     .header-content {
@@ -168,7 +167,6 @@
         color: #6B7280;
     }
     
-    /* Podstawowe style dla kart - desktop */
     .brands-container {
         transition: all 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
         margin: 0 auto;
@@ -189,7 +187,6 @@
         position: relative;
     }
     
-    /* Efekt GLOW na stałe - subtelny */
     .brand-card[data-brand="alltera"] {
         box-shadow: 0 20px 35px rgba(38, 142, 135, 0.2), 0 0 0 1px rgba(38, 142, 135, 0.08);
     }
@@ -206,14 +203,12 @@
         box-shadow: 0 20px 35px rgba(130, 183, 115, 0.2), 0 0 0 1px rgba(130, 183, 115, 0.08);
     }
     
-    /* EFEKT KARUZELI - DRAMATYCZNE ZMIANY */
     .brands-container:hover .brand-card:not(:hover) {
         transform: scale(0.55) translateX(40px) rotate(2deg);
         opacity: 0.2;
         filter: none;
     }
     
-    /* Karta na którą najeżdżamy - spektakularne wyróżnienie */
     .brand-card:hover {
         transform: scale(1.35) translateY(-25px);
         z-index: 100;
@@ -415,9 +410,10 @@
             justify-content: center;
         }
         
-        /* Header na mobile - podstawowy padding, JS doda więcej */
+        /* !!! KLUCZOWA ZMIANA - DUŻY PADDING NA TELEFONACH !!! */
         .splash-header {
-            padding: 15px 20px 10px 20px;
+            padding-top: 70px !important;
+            padding-bottom: 15px;
         }
         
         .header-info {
@@ -525,6 +521,7 @@
         }
     }
     
+    /* Jeszcze większy padding na bardzo małych ekranach */
     @media (max-width: 480px) {
         .brand-card {
             max-width: 290px;
@@ -550,8 +547,10 @@
             min-width: 100px;
         }
         
+        /* Jeszcze większy padding na małych ekranach */
         .splash-header {
-            padding: 10px 15px 8px 15px;
+            padding-top: 85px !important;
+            padding-bottom: 10px;
         }
         
         .header-info {
@@ -582,73 +581,31 @@
             transform: scale(1.1) translateX(-5px);
         }
     }
+    
+    /* Dodatkowe wsparcie dla wysokich pasków (np. niektóre Androide) */
+    @media (max-width: 768px) and (min-height: 700px) {
+        .splash-header {
+            padding-top: 90px !important;
+        }
+    }
+    
+    @media (max-width: 480px) and (min-height: 700px) {
+        .splash-header {
+            padding-top: 110px !important;
+        }
+    }
 </style>
 
 <script>
-    // EKRAN POWITALNY - DESIGNERSKA KARUZELA Z BLOKADĄ SCROLLA
+    // EKRAN POWITALNY
     (function() {
         const cards = document.querySelectorAll('.brand-card');
         const splashContainer = document.getElementById('brandSplash');
-        const splashHeader = document.getElementById('splashHeader');
         
         // BLOKADA SCROLLA
         document.body.classList.add('splash-active');
         
-        // === FUNKCJA DO POPRAWIENIA POZYCJI HEADER NA MOBILCE ===
-        function fixMobileHeaderPosition() {
-            // Tylko na urządzeniach mobilnych
-            if (window.innerWidth > 768) return;
-            if (!splashHeader) return;
-            
-            // Tworzymy tymczasowy element do pomiaru wysokości paska adresu
-            // Używamy metody z elementem absolutnym na górze
-            const tempDiv = document.createElement('div');
-            tempDiv.style.position = 'fixed';
-            tempDiv.style.top = '0';
-            tempDiv.style.left = '0';
-            tempDiv.style.width = '100px';
-            tempDiv.style.height = '100px';
-            tempDiv.style.visibility = 'hidden';
-            tempDiv.style.pointerEvents = 'none';
-            document.body.appendChild(tempDiv);
-            
-            // Pobieramy getBoundingClientRect - top powinien być równy wysokości paska
-            const topBarHeight = tempDiv.getBoundingClientRect().top;
-            tempDiv.remove();
-            
-            // Jeśli topBarHeight jest ujemne (pasek nad widokiem) lub dodatnie (zakładki)
-            // Dla Chrome na Androidzie topBarHeight często jest dodatnie (około 70-120px)
-            const safeTop = Math.max(0, topBarHeight);
-            
-            // Ustawiamy padding-top na headeraze - dodajemy wysokość paska + 15px odstępu
-            if (safeTop > 0) {
-                splashHeader.style.paddingTop = (safeTop + 15) + 'px';
-            } else {
-                // Fallback - jeśli nie wykryto, ustawiamy standardowe 60px dla bezpieczeństwa
-                splashHeader.style.paddingTop = '60px';
-            }
-        }
-        
-        // Sprawdź czy jesteśmy na urządzeniu mobilnym
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        
-        // Uruchom poprawkę pozycji headera
-        if (isMobile) {
-            // Najpierw od razu po załadowaniu
-            setTimeout(fixMobileHeaderPosition, 50);
-            setTimeout(fixMobileHeaderPosition, 200);
-            setTimeout(fixMobileHeaderPosition, 500);
-            
-            // Również przy każdej zmianie orientacji lub przewinięciu (pasek może się chować/pokazywać)
-            window.addEventListener('resize', () => setTimeout(fixMobileHeaderPosition, 100));
-            window.addEventListener('scroll', () => setTimeout(fixMobileHeaderPosition, 50));
-            
-            // Obserwator zmian rozmiaru - dla pewności
-            if (window.ResizeObserver) {
-                const resizeObserver = new ResizeObserver(() => fixMobileHeaderPosition());
-                resizeObserver.observe(document.body);
-            }
-        }
         
         // Uruchom animację rozsuwania
         setTimeout(() => {
@@ -665,7 +622,6 @@
             }
         }, 100);
         
-        // Funkcja przekierowania
         function redirectTo(brand) {
             if (!splashContainer) return;
             
@@ -700,7 +656,6 @@
             }, 500);
         }
         
-        // Nasłuchiwanie kliknięć
         cards.forEach((card) => {
             const brand = card.getAttribute('data-brand');
             const btn = card.querySelector('.brand-btn');
@@ -718,7 +673,6 @@
             }
         });
         
-        // Obsługa zmiany orientacji ekranu - odświeżenie animacji
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
@@ -735,8 +689,6 @@
                     if (cards[1]) cards[1].classList.add('animate-right');
                     if (cards[2]) cards[2].classList.add('animate-left');
                     if (cards[3]) cards[3].classList.add('animate-right');
-                    // Popraw pozycję headera po zmianie orientacji
-                    setTimeout(fixMobileHeaderPosition, 100);
                 } else {
                     if (cards[0]) cards[0].classList.add('animate-up');
                     if (cards[1]) cards[1].classList.add('animate-down');
