@@ -385,18 +385,18 @@
             gap: 20px !important;
             width: 100%;
             max-width: 100%;
-            padding: 10px 20px;
+            padding: 20px;
         }
         
         .brand-card {
             width: 100%;
             max-width: 320px;
-            padding: 18px 15px;
+            padding: 20px 18px;
             display: flex;
             flex-direction: row !important;
             align-items: center;
             text-align: center;
-            gap: 12px;
+            gap: 15px;
         }
         
         .brand-content {
@@ -408,45 +408,39 @@
             justify-content: center;
         }
         
-        /* MINIMALNY HEADER - prawie zerowe marginesy i paddingi */
+        /* Header na mobile - wyśrodkowany, odpowiedniej wielkości */
         .splash-header {
-            padding: 15px 10px 5px 10px !important;
-            margin: 0 !important;
+            padding: 30px 20px 15px 20px;
+            margin-top: auto;
         }
         
         .header-info {
-            font-size: 18px !important;
+            font-size: 24px !important;
             font-weight: 600;
             letter-spacing: -0.2px;
-            line-height: 1.2;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        
-        .header-info span {
-            display: inline-block;
-            margin: 0;
-            padding: 0;
+            line-height: 1.3;
+            max-width: 90%;
+            margin: 0 auto;
         }
         
         .splash-footer {
-            padding: 8px 15px;
+            padding: 10px 15px;
         }
         
         .footer-content {
-            gap: 8px;
+            gap: 10px;
             flex-direction: column;
             align-items: center;
         }
         
         .footer-info {
             font-size: 10px;
-            gap: 5px;
+            gap: 6px;
         }
         
         .footer-info svg {
-            width: 11px;
-            height: 11px;
+            width: 12px;
+            height: 12px;
         }
         
         .brands-container:hover .brand-card:not(:hover) {
@@ -486,12 +480,12 @@
         }
         
         .brand-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             margin: 0;
             flex-shrink: 0;
-            padding: 10px;
-            border-radius: 18px;
+            padding: 12px;
+            border-radius: 20px;
         }
         
         .brand-card:hover .brand-icon {
@@ -505,15 +499,15 @@
         }
         
         .brand-card h3 {
-            font-size: 14px;
-            margin-bottom: 8px;
+            font-size: 15px;
+            margin-bottom: 10px;
             text-align: center;
         }
         
         .brand-btn {
-            padding: 6px 16px;
+            padding: 7px 18px;
             font-size: 11px;
-            min-width: 100px;
+            min-width: 110px;
         }
         
         .brand-card:hover h3 {
@@ -525,58 +519,57 @@
         }
     }
     
-    /* Jeszcze mniejsze marginesy na bardzo małych ekranach */
+    /* Dla bardzo małych ekranów - dostosowanie */
     @media (max-width: 480px) {
         .brand-card {
             max-width: 280px;
-            padding: 15px 12px;
-            gap: 10px;
+            padding: 18px 15px;
+            gap: 12px;
         }
         
         .brand-icon {
-            width: 60px;
-            height: 60px;
-            padding: 8px;
-            border-radius: 16px;
+            width: 70px;
+            height: 70px;
+            padding: 10px;
+            border-radius: 18px;
         }
         
         .brand-card h3 {
-            font-size: 13px;
-            margin-bottom: 6px;
+            font-size: 14px;
+            margin-bottom: 8px;
         }
         
         .brand-btn {
-            padding: 5px 12px;
+            padding: 6px 14px;
             font-size: 10px;
-            min-width: 85px;
+            min-width: 95px;
         }
         
         .splash-header {
-            padding: 10px 8px 3px 8px !important;
+            padding: 25px 15px 12px 15px;
         }
         
         .header-info {
-            font-size: 16px !important;
-            line-height: 1.2;
+            font-size: 20px !important;
         }
         
         .splash-footer {
-            padding: 6px 10px;
+            padding: 8px 12px;
         }
         
         .footer-info {
-            font-size: 8px;
-            gap: 4px;
+            font-size: 9px;
+            gap: 5px;
         }
         
         .footer-info svg {
-            width: 9px;
-            height: 9px;
+            width: 10px;
+            height: 10px;
         }
         
         .brands-container {
-            padding: 5px 15px;
-            gap: 15px !important;
+            padding: 15px;
+            gap: 18px !important;
         }
         
         .brands-container:hover .brand-card:not(:hover) {
@@ -586,6 +579,17 @@
         
         .brand-card:hover {
             transform: scale(1.1) translateX(-5px);
+        }
+    }
+    
+    /* Dodatkowe centrowanie dla wyższych ekranów */
+    @media (min-height: 700px) and (max-width: 768px) {
+        .splash-header {
+            padding-top: 40px;
+        }
+        
+        .header-info {
+            font-size: 26px !important;
         }
     }
 </style>
