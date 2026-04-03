@@ -110,7 +110,6 @@
         padding: 20px 20px 10px 20px;
         background: transparent;
         flex-shrink: 0;
-        margin-top: auto;
     }
     
     .header-content {
@@ -139,7 +138,6 @@
         padding: 12px 20px;
         background: rgba(255, 255, 255, 0.9);
         border-top: 1px solid rgba(0, 0, 0, 0.05);
-        margin-top: auto;
         flex-shrink: 0;
     }
     
@@ -384,21 +382,21 @@
     @media (max-width: 768px) {
         .brands-container {
             flex-direction: column !important;
-            gap: 25px !important;
+            gap: 20px !important;
             width: 100%;
             max-width: 100%;
-            padding: 20px;
+            padding: 15px 20px;
         }
         
         .brand-card {
             width: 100%;
             max-width: 320px;
-            padding: 25px 20px;
+            padding: 20px 18px;
             display: flex;
             flex-direction: row !important;
             align-items: center;
             text-align: center;
-            gap: 20px;
+            gap: 15px;
         }
         
         .brand-content {
@@ -410,27 +408,26 @@
             justify-content: center;
         }
         
-        /* !!! KLUCZOWA ZMIANA - DUŻY PADDING NA TELEFONACH !!! */
+        /* Header na mobile - MNIEJSZY NAPIS I MNIEJSZY PADDING */
         .splash-header {
-            padding-top: 70px !important;
-            padding-bottom: 15px;
+            padding: 50px 15px 10px 15px;
         }
         
         .header-info {
-            font-size: 28px;
-            font-weight: 700;
+            font-size: 20px !important;
+            font-weight: 600;
             letter-spacing: -0.2px;
             line-height: 1.3;
-            max-width: 90%;
+            max-width: 100%;
             margin: 0 auto;
         }
         
         .splash-footer {
-            padding: 8px 15px;
+            padding: 10px 15px;
         }
         
         .footer-content {
-            gap: 12px;
+            gap: 10px;
             flex-direction: column;
             align-items: center;
         }
@@ -482,12 +479,12 @@
         }
         
         .brand-icon {
-            width: 85px;
-            height: 85px;
+            width: 75px;
+            height: 75px;
             margin: 0;
             flex-shrink: 0;
-            padding: 15px;
-            border-radius: 24px;
+            padding: 12px;
+            border-radius: 20px;
         }
         
         .brand-card:hover .brand-icon {
@@ -501,15 +498,15 @@
         }
         
         .brand-card h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
+            font-size: 15px;
+            margin-bottom: 10px;
             text-align: center;
         }
         
         .brand-btn {
-            padding: 8px 20px;
-            font-size: 12px;
-            min-width: 120px;
+            padding: 7px 18px;
+            font-size: 11px;
+            min-width: 110px;
         }
         
         .brand-card:hover h3 {
@@ -521,45 +518,43 @@
         }
     }
     
-    /* Jeszcze większy padding na bardzo małych ekranach */
+    /* Jeszcze mniejszy napis na bardzo małych ekranach */
     @media (max-width: 480px) {
         .brand-card {
-            max-width: 290px;
-            padding: 20px 15px;
-            gap: 15px;
+            max-width: 280px;
+            padding: 18px 15px;
+            gap: 12px;
         }
         
         .brand-icon {
-            width: 70px;
-            height: 70px;
-            padding: 12px;
-            border-radius: 20px;
+            width: 65px;
+            height: 65px;
+            padding: 10px;
+            border-radius: 18px;
         }
         
         .brand-card h3 {
-            font-size: 14px;
-            margin-bottom: 10px;
+            font-size: 13px;
+            margin-bottom: 8px;
         }
         
         .brand-btn {
-            padding: 6px 16px;
-            font-size: 11px;
-            min-width: 100px;
+            padding: 6px 14px;
+            font-size: 10px;
+            min-width: 95px;
         }
         
-        /* Jeszcze większy padding na małych ekranach */
         .splash-header {
-            padding-top: 85px !important;
-            padding-bottom: 10px;
+            padding: 55px 12px 8px 12px;
         }
         
         .header-info {
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 18px !important;
+            font-weight: 600;
         }
         
         .splash-footer {
-            padding: 6px 12px;
+            padding: 8px 12px;
         }
         
         .footer-info {
@@ -572,6 +567,11 @@
             height: 10px;
         }
         
+        .brands-container {
+            padding: 10px 15px;
+            gap: 18px !important;
+        }
+        
         .brands-container:hover .brand-card:not(:hover) {
             transform: scale(0.75) translateX(20px);
             opacity: 0.3;
@@ -582,17 +582,12 @@
         }
     }
     
-    /* Dodatkowe wsparcie dla wysokich pasków (np. niektóre Androide) */
-    @media (max-width: 768px) and (min-height: 700px) {
-        .splash-header {
-            padding-top: 90px !important;
-        }
-    }
-    
-    @media (max-width: 480px) and (min-height: 700px) {
-        .splash-header {
-            padding-top: 110px !important;
-        }
+    /* Dla bardzo długich napisów - zawijanie tekstu */
+    .header-info span {
+        display: inline-block;
+        word-break: keep-all;
+        white-space: normal;
+        line-height: 1.3;
     }
 </style>
 
@@ -602,12 +597,10 @@
         const cards = document.querySelectorAll('.brand-card');
         const splashContainer = document.getElementById('brandSplash');
         
-        // BLOKADA SCROLLA
         document.body.classList.add('splash-active');
         
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
         
-        // Uruchom animację rozsuwania
         setTimeout(() => {
             if (isMobile) {
                 if (cards[0]) cards[0].classList.add('animate-left');
