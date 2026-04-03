@@ -11,11 +11,11 @@
 <!-- EKRAN POWITALNY - DESIGNERSKA KARUZELA Z BLOKADĄ SCROLLA I MINI HEADEREM ORAZ MINI FOOTEREM -->
 <div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); z-index: 99999; display: flex; justify-content: center; align-items: center; flex-direction: column; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
     
-    <!-- MINI HEADER -->
+    <!-- MINI HEADER - PRZEZROCZYSTY -->
     <div class="splash-header">
         <div class="header-content">
             <div class="header-info">
-                <span>Wybierz, czego dziś potrzebujesz.</span>
+                <span>wybierz, czego dzisiaj potrzebujesz</span>
             </div>
         </div>
     </div>
@@ -104,35 +104,33 @@
         height: 100% !important;
     }
     
-    /* MINI HEADER STYLE */
+    /* MINI HEADER STYLE - PRZEZROCZYSTY BEZ RAMKI */
     .splash-header {
         width: 100%;
-        padding: 12px 20px;
-        background: rgba(255, 255, 255, 0.9);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 20px 20px 10px 20px;
+        background: transparent;
+        flex-shrink: 0;
     }
     
     .header-content {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        max-width: 800px;
-        margin: 0 auto;
+        width: 100%;
     }
     
     .header-info {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 8px;
-        font-size: 14px;
+        font-size: 24px;
         font-weight: 600;
-        color: #4A5568;
+        color: #2D3748;
         font-family: 'Arial', sans-serif;
-        letter-spacing: 0.5px;
+        letter-spacing: -0.3px;
+        text-align: center;
     }
-    
     
     /* MINI FOOTER STYLE */
     .splash-footer {
@@ -141,6 +139,7 @@
         background: rgba(255, 255, 255, 0.9);
         border-top: 1px solid rgba(0, 0, 0, 0.05);
         margin-top: auto;
+        flex-shrink: 0;
     }
     
     .footer-content {
@@ -427,23 +426,11 @@
         
         /* MINI HEADER na mobile */
         .splash-header {
-            padding: 8px 15px;
-        }
-        
-        .header-content {
-            gap: 12px;
-            flex-direction: column;
-            align-items: center;
+            padding: 15px 15px 5px 15px;
         }
         
         .header-info {
-            font-size: 12px;
-            gap: 6px;
-        }
-        
-        .header-info svg {
-            width: 12px;
-            height: 12px;
+            font-size: 18px;
         }
         
         /* MINI FOOTER na mobile */
@@ -573,17 +560,11 @@
         }
         
         .splash-header {
-            padding: 6px 12px;
+            padding: 12px 12px 5px 12px;
         }
         
         .header-info {
-            font-size: 11px;
-            gap: 5px;
-        }
-        
-        .header-info svg {
-            width: 10px;
-            height: 10px;
+            font-size: 16px;
         }
         
         .splash-footer {
