@@ -11,8 +11,8 @@
 <!-- EKRAN POWITALNY - DESIGNERSKA KARUZELA Z BLOKADĄ SCROLLA I MINI HEADEREM ORAZ MINI FOOTEREM -->
 <div id="brandSplash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); z-index: 99999; display: flex; justify-content: center; align-items: center; flex-direction: column; opacity: 1; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
     
-    <!-- MINI HEADER - PRZEZROCZYSTY, WYŚRODKOWANY PIONOWO MIĘDZY GÓRĄ A KAFELKAMI -->
-    <div class="splash-header">
+    <!-- MINI HEADER - PRZEZROCZYSTY -->
+    <div class="splash-header" id="splashHeader">
         <div class="header-content">
             <div class="header-info">
                 <span>Wybierz, czego dzisiaj potrzebujesz</span>
@@ -111,6 +111,7 @@
         background: transparent;
         flex-shrink: 0;
         margin-top: auto;
+        transition: padding-top 0.1s ease;
     }
     
     .header-content {
@@ -218,7 +219,6 @@
         z-index: 100;
     }
     
-    /* Mocny GLOW na hover - ZMNIEJSZONY I MNIEJ INTENSYWNY */
     .brand-card[data-brand="alltera"]:hover {
         box-shadow: 0 25px 45px rgba(38, 142, 135, 0.35), 0 0 0 2px rgba(38, 142, 135, 0.2);
     }
@@ -235,7 +235,6 @@
         box-shadow: 0 25px 45px rgba(130, 183, 115, 0.35), 0 0 0 2px rgba(130, 183, 115, 0.2);
     }
     
-    /* Ikona / logo */
     .brand-icon {
         width: 200px;
         height: 200px;
@@ -257,7 +256,6 @@
         box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08), 0 15px 30px rgba(0, 0, 0, 0.1);
     }
     
-    /* Logo */
     .brand-icon img {
         width: 100%;
         height: 100%;
@@ -270,13 +268,11 @@
         transform: scale(1.05);
     }
     
-    /* Zawartość tekstowa */
     .brand-content {
         width: 100%;
         transition: all 0.4s ease;
     }
     
-    /* Tekst */
     .brand-card h3 {
         font-size: 19px;
         font-weight: 700;
@@ -292,7 +288,6 @@
         color: #000;
     }
     
-    /* Przycisk */
     .brand-btn {
         background: transparent;
         border: 2px solid;
@@ -314,7 +309,6 @@
         transform: scale(1.05);
     }
     
-    /* Kolory przycisków */
     .brand-card[data-brand="alltera"] .brand-btn {
         color: #268e87;
         border-color: #268e87;
@@ -359,7 +353,6 @@
         box-shadow: 0 8px 20px rgba(130, 183, 115, 0.3);
     }
     
-    /* Animacje rozsuwania - desktop (góra/dół) */
     @keyframes spreadUpDesktop {
         0% { transform: translateY(0); opacity: 1; }
         100% { transform: translateY(-50px); opacity: 1; }
@@ -369,7 +362,6 @@
         100% { transform: translateY(50px); opacity: 1; }
     }
     
-    /* Animacje rozsuwania - mobile (lewo/prawo) */
     @keyframes spreadLeftMobile {
         0% { transform: translateX(0); opacity: 1; }
         100% { transform: translateX(-40px); opacity: 1; }
@@ -379,7 +371,6 @@
         100% { transform: translateX(40px); opacity: 1; }
     }
     
-    /* Klasy dla desktop */
     .animate-up {
         animation: spreadUpDesktop 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
     }
@@ -387,7 +378,6 @@
         animation: spreadDownDesktop 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
     }
     
-    /* Klasy dla mobile */
     .animate-left {
         animation: spreadLeftMobile 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
     }
@@ -425,10 +415,9 @@
             justify-content: center;
         }
         
-        /* MINI HEADER na mobile - naprawa zasłaniania przez pasek przeglądarki */
+        /* Header na mobile - podstawowy padding, JS doda więcej */
         .splash-header {
-            padding: env(safe-area-inset-top, 20px) 20px 15px 20px;
-            margin-top: auto;
+            padding: 15px 20px 10px 20px;
         }
         
         .header-info {
@@ -438,19 +427,10 @@
             line-height: 1.3;
             max-width: 90%;
             margin: 0 auto;
-            padding-top: 5px;
         }
         
-        /* Dodatkowe zabezpieczenie dla bardzo wysokich pasków (np. iPhone z Dynamic Island) */
-        @supports (padding-top: env(safe-area-inset-top)) {
-            .splash-header {
-                padding-top: calc(env(safe-area-inset-top) + 15px);
-            }
-        }
-        
-        /* MINI FOOTER na mobile */
         .splash-footer {
-            padding: 8px 15px env(safe-area-inset-bottom, 8px) 15px;
+            padding: 8px 15px;
         }
         
         .footer-content {
@@ -469,7 +449,6 @@
             height: 12px;
         }
         
-        /* EFEKT KARUZELI NA MOBILE - PIONOWO Z PRZESUNIĘCIAMI W PRAWO/LEWO */
         .brands-container:hover .brand-card:not(:hover) {
             transform: scale(0.7) translateX(30px) rotate(1deg);
             opacity: 0.25;
@@ -546,7 +525,6 @@
         }
     }
     
-    /* Dla bardzo małych ekranów */
     @media (max-width: 480px) {
         .brand-card {
             max-width: 290px;
@@ -573,23 +551,16 @@
         }
         
         .splash-header {
-            padding: env(safe-area-inset-top, 15px) 15px 10px 15px;
+            padding: 10px 15px 8px 15px;
         }
         
         .header-info {
             font-size: 22px;
             font-weight: 700;
-            padding-top: 5px;
-        }
-        
-        @supports (padding-top: env(safe-area-inset-top)) {
-            .splash-header {
-                padding-top: calc(env(safe-area-inset-top) + 10px);
-            }
         }
         
         .splash-footer {
-            padding: 6px 12px env(safe-area-inset-bottom, 6px) 12px;
+            padding: 6px 12px;
         }
         
         .footer-info {
@@ -618,14 +589,68 @@
     (function() {
         const cards = document.querySelectorAll('.brand-card');
         const splashContainer = document.getElementById('brandSplash');
+        const splashHeader = document.getElementById('splashHeader');
         
-        // BLOKADA SCROLLA - DODAJEMY KLASĘ DO BODY
+        // BLOKADA SCROLLA
         document.body.classList.add('splash-active');
+        
+        // === FUNKCJA DO POPRAWIENIA POZYCJI HEADER NA MOBILCE ===
+        function fixMobileHeaderPosition() {
+            // Tylko na urządzeniach mobilnych
+            if (window.innerWidth > 768) return;
+            if (!splashHeader) return;
+            
+            // Tworzymy tymczasowy element do pomiaru wysokości paska adresu
+            // Używamy metody z elementem absolutnym na górze
+            const tempDiv = document.createElement('div');
+            tempDiv.style.position = 'fixed';
+            tempDiv.style.top = '0';
+            tempDiv.style.left = '0';
+            tempDiv.style.width = '100px';
+            tempDiv.style.height = '100px';
+            tempDiv.style.visibility = 'hidden';
+            tempDiv.style.pointerEvents = 'none';
+            document.body.appendChild(tempDiv);
+            
+            // Pobieramy getBoundingClientRect - top powinien być równy wysokości paska
+            const topBarHeight = tempDiv.getBoundingClientRect().top;
+            tempDiv.remove();
+            
+            // Jeśli topBarHeight jest ujemne (pasek nad widokiem) lub dodatnie (zakładki)
+            // Dla Chrome na Androidzie topBarHeight często jest dodatnie (około 70-120px)
+            const safeTop = Math.max(0, topBarHeight);
+            
+            // Ustawiamy padding-top na headeraze - dodajemy wysokość paska + 15px odstępu
+            if (safeTop > 0) {
+                splashHeader.style.paddingTop = (safeTop + 15) + 'px';
+            } else {
+                // Fallback - jeśli nie wykryto, ustawiamy standardowe 60px dla bezpieczeństwa
+                splashHeader.style.paddingTop = '60px';
+            }
+        }
         
         // Sprawdź czy jesteśmy na urządzeniu mobilnym
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
         
-        // Uruchom odpowiednią animację rozsuwania
+        // Uruchom poprawkę pozycji headera
+        if (isMobile) {
+            // Najpierw od razu po załadowaniu
+            setTimeout(fixMobileHeaderPosition, 50);
+            setTimeout(fixMobileHeaderPosition, 200);
+            setTimeout(fixMobileHeaderPosition, 500);
+            
+            // Również przy każdej zmianie orientacji lub przewinięciu (pasek może się chować/pokazywać)
+            window.addEventListener('resize', () => setTimeout(fixMobileHeaderPosition, 100));
+            window.addEventListener('scroll', () => setTimeout(fixMobileHeaderPosition, 50));
+            
+            // Obserwator zmian rozmiaru - dla pewności
+            if (window.ResizeObserver) {
+                const resizeObserver = new ResizeObserver(() => fixMobileHeaderPosition());
+                resizeObserver.observe(document.body);
+            }
+        }
+        
+        // Uruchom animację rozsuwania
         setTimeout(() => {
             if (isMobile) {
                 if (cards[0]) cards[0].classList.add('animate-left');
@@ -640,6 +665,7 @@
             }
         }, 100);
         
+        // Funkcja przekierowania
         function redirectTo(brand) {
             if (!splashContainer) return;
             
@@ -674,6 +700,7 @@
             }, 500);
         }
         
+        // Nasłuchiwanie kliknięć
         cards.forEach((card) => {
             const brand = card.getAttribute('data-brand');
             const btn = card.querySelector('.brand-btn');
@@ -691,6 +718,7 @@
             }
         });
         
+        // Obsługa zmiany orientacji ekranu - odświeżenie animacji
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
@@ -707,6 +735,8 @@
                     if (cards[1]) cards[1].classList.add('animate-right');
                     if (cards[2]) cards[2].classList.add('animate-left');
                     if (cards[3]) cards[3].classList.add('animate-right');
+                    // Popraw pozycję headera po zmianie orientacji
+                    setTimeout(fixMobileHeaderPosition, 100);
                 } else {
                     if (cards[0]) cards[0].classList.add('animate-up');
                     if (cards[1]) cards[1].classList.add('animate-down');
