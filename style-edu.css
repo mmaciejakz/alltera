@@ -116,7 +116,7 @@ p {
 }
 
 #about .about-box h2 {
-    color: rgb(31, 63, 88);
+    color: rgb(255, 255, 255);
     font-size: 28px;
     margin-bottom: 15px;
 }
@@ -304,7 +304,7 @@ p {
 }
 
 .pricing-grid > div > .certified {
-    background: #c7f0f7;
+    background: rgb(147, 192, 226);
     color: rgb(51, 47, 41);
     padding: 15px;
     transition: transform 0.3s ease;
