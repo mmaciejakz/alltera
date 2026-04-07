@@ -51,7 +51,7 @@ nav a {
 
 nav a:hover {
     color: rgb(255, 255, 255);
-    background: rgb(65, 128, 124);
+    background: rgb(31, 63, 88);
     transform: translateY(-2px);
 }
 
@@ -67,7 +67,7 @@ section {
 }
 
 h2, h3 {
-    color: rgb(65, 128, 124);
+    color: rgb(31, 63, 88);
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -116,7 +116,7 @@ p {
 }
 
 #about .about-box h2 {
-    color: #41C4B8;
+    color: rgb(31, 63, 88);
     font-size: 28px;
     margin-bottom: 15px;
 }
@@ -130,7 +130,7 @@ p {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background: #41C4B8;
+    background: rgb(31, 63, 88);
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
@@ -181,14 +181,14 @@ p {
 }
 
 .accordion-header.active {
-    background: #41807C;
+    background: rgb(31, 63, 88);
     color: #ffffff;
 }
 
 .accordion-header::after {
     content: '↓';
     font-size: 16px;
-    color: rgb(65, 128, 124);
+    color: rgb(31, 63, 88);
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -219,7 +219,7 @@ p {
 
 /* Styl dla sekcji Zakres Usług */
 .services-grid > div:first-child {
-    background: #3A706D;
+    background: rgb(31, 63, 88);
     color: #ffffff;
     padding: 20px;
     transform: none;
@@ -256,7 +256,7 @@ p {
 
 /* Styl dla sekcji Języki */
 #languages .services-grid > div:first-child {
-    background: #41807C;
+    background: rgb(31, 63, 88);
     color: #ffffff;
     padding: 20px;
 }
@@ -287,7 +287,7 @@ p {
 }
 
 .pricing-grid > div > .ordinary {
-    background: #41807C;
+    background: rgb(31, 63, 88);
     color: #ffffff;
     padding: 15px;
     transition: transform 0.3s ease;
@@ -401,7 +401,7 @@ footer p {
 }
 
 .cookie-banner button {
-    background: rgb(65, 128, 124);
+    background: rgb(31, 63, 88);
     color: white;
     border: none;
     padding: 8px 16px;
@@ -412,7 +412,7 @@ footer p {
 }
 
 .cookie-banner button:hover {
-    background: rgb(51, 100, 97);
+    background: rgb(31, 63, 88);
 }
 
 /* Animacje */
