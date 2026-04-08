@@ -234,6 +234,9 @@ li {
     font-weight: 700;
     border-radius: 20px;
 }
+.btn-small:hover {
+    transform: scale(1.05);
+}
 
 /* Business Section */
 .business-intro {
