@@ -48,7 +48,8 @@ nav a:hover {
     background: rgb(180, 47, 53);
     transform: translateY(-2px);
 }
-/* Sekcje */
+
+/* Sekcje ogólne */
 section {
     padding: 100px 20px;
     position: relative;
@@ -63,7 +64,6 @@ h2, h3 {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 15px;
-    position: relative;
 }
 h3 {
     font-size: 24px;
@@ -72,6 +72,7 @@ p {
     font-size: 16px;
     max-width: 800px;
     color: rgb(51, 47, 41);
+    margin-bottom: 15px;
 }
 ul {
     text-align: left;
@@ -83,41 +84,21 @@ li {
     margin-bottom: 8px;
 }
 
-/* Hero Section */
+/* Hero Section (z kontenerem) */
 #hero {
     padding-top: 150px;
     background: linear-gradient(135deg, #FFFFFF 50%, rgba(180, 47, 53, 0.05) 100%);
-}
-#hero h1 {
-    color: rgb(180, 47, 53);
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-.hero-features {
-    list-style: none;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-/* Sekcja O Firmie / Metoda */
-#about {
-    background: linear-gradient(135deg, #FFFFFF 50%, rgba(65, 128, 124, 0.05) 100%);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
-    padding: 120px 20px 80px 20px;
-    position: relative;
 }
-#about .about-image {
+#hero .hero-image {
     width: 100%;
     max-width: 450px;
     height: auto;
     object-fit: cover;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transform: none;
 }
-#about .about-box {
+#hero .hero-box {
     background: #332F29;
     color: #B0B0B0;
     padding: 30px;
@@ -125,17 +106,27 @@ li {
     max-width: 550px;
     text-align: left;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transform: none;
 }
-#about .about-box h2 {
+#hero .hero-box h1 {
     color: #ffffff;
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 15px;
 }
-#about .about-box p {
+#hero .hero-box p {
     color: #B0B0B0;
     font-size: 16px;
 }
+.hero-features {
+    list-style: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 15px 0;
+}
+.hero-features li {
+    color: #ffffff;
+}
+
+/* Przycisk */
 .btn {
     display: inline-block;
     margin-top: 15px;
@@ -156,8 +147,8 @@ li {
     transform: scale(1.05);
 }
 
-/* Kolory tła dla pozostałych sekcji */
-#for-whom, #testimonials {
+/* Kolory tła */
+#about, #for-whom, #testimonials {
     background: rgb(255, 255, 255);
 }
 #why-it-works, #business {
@@ -172,7 +163,6 @@ li {
 }
 .accordion-item {
     margin-bottom: 10px;
-    border: none;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -184,14 +174,9 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background 0.3s ease, color 0.3s ease;
-    width: 100%;
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-}
-.accordion-header:hover {
-    background: rgba(180, 47, 53, 0.05);
 }
 .accordion-header.active {
     background: rgb(180, 47, 53);
@@ -199,21 +184,16 @@ li {
 }
 .accordion-header::after {
     content: '↓';
-    font-size: 16px;
-    color: rgb(180, 47, 53);
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 .accordion-header.active::after {
     transform: rotate(180deg);
-    color: #ffffff;
 }
 .accordion-content {
     padding: 15px;
     display: none;
     background: rgb(255, 255, 255);
     text-align: left;
-    width: 100%;
-    font-size: 15px;
 }
 
 /* Grid */
@@ -253,24 +233,21 @@ li {
     font-size: 13px;
     font-weight: 700;
     border-radius: 20px;
-    transition: all 0.3s ease;
-}
-.btn-small:hover {
-    background: #f0f0f0;
-    transform: scale(1.05);
 }
 
 /* Business Section */
-#business .services-grid > div:first-child {
+.business-intro {
+    margin-bottom: 30px;
+}
+.business-skills {
     background: rgb(180, 47, 53);
     color: #ffffff;
     padding: 30px;
 }
-#business .services-grid > div:first-child p, 
-#business .services-grid > div:first-child li {
+.business-skills h4, .business-skills li {
     color: #ffffff;
 }
-#business .services-grid > div:last-child {
+.business-summary {
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -279,26 +256,38 @@ li {
 
 /* Kontakt */
 .contact-section {
-    background: rgba(65, 128, 124, 0.05);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     padding: 100px 20px;
+    background: #f9f9f9;
+}
+.contact-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 500px;
 }
 .contact-box {
-    background: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 2;
-    margin: 20px 0;
-    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    border-top: 5px solid rgb(180, 47, 53);
+}
+.contact-item {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.contact-item strong {
+    color: rgb(180, 47, 53);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.contact-item span {
+    font-size: 18px;
+    color: #332F29;
+    font-weight: bold;
 }
 .map-bg {
     position: absolute;
@@ -306,24 +295,19 @@ li {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.3;
+    opacity: 0.4;
     z-index: 1;
+    filter: grayscale(100%);
 }
 
 /* Footer */
 footer {
     background: rgb(51, 47, 41);
-    color: #ffffff !important;
+    color: #ffffff;
     padding: 40px 20px;
-    text-align: center;
-    font-size: 12px;
-    position: relative;
-    z-index: 10;
 }
 footer p {
-    max-width: 800px;
-    color: #ffffff !important;
-    margin: 0 auto;
+    color: #ffffff;
     font-size: 14px;
 }
 
@@ -343,7 +327,7 @@ footer p {
     z-index: 1001;
 }
 .cookie-banner p {
-    color: white !important;
+    color: white;
     font-size: 14px;
     margin-bottom: 10px;
     flex: 1 1 100%;
@@ -355,11 +339,6 @@ footer p {
     padding: 8px 16px;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s ease;
-}
-.cookie-banner button:hover {
-    background: rgb(200, 50, 60);
 }
 
 /* Animacje */
@@ -382,17 +361,16 @@ footer p {
     nav a { margin-left: 15px; font-size: 16px; padding: 8px 12px; }
     section { padding: 120px 40px; }
     h2, h3 { font-size: 32px; }
-    #hero h1 { font-size: 48px; }
     
-    #about { flex-direction: row; padding: 140px 40px 100px 40px; }
-    #about .about-image { width: 450px; height: 300px; transform: translateX(30px); }
-    #about .about-box { transform: translateX(-30px); max-width: 550px; }
+    #hero { flex-direction: row; padding: 160px 40px 100px 40px; justify-content: center; }
+    #hero .hero-image { width: 450px; height: 350px; transform: translateX(30px); }
+    #hero .hero-box { transform: translateX(-30px); max-width: 550px; }
+    #hero .hero-box h1 { font-size: 32px; }
     
     .services-grid { grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
     
-    .contact-section { flex-direction: row; justify-content: flex-start; align-items: flex-start; text-align: left; padding: 120px 40px; min-height: 600px; }
-    .contact-box { margin-left: 40px; margin-top: 20px; text-align: left; }
-    .map-bg { opacity: 0.8; }
+    .contact-section { flex-direction: row; justify-content: center; align-items: center; min-height: 700px; }
+    .map-bg { opacity: 0.7; filter: none; }
     
     .cookie-banner p { flex: 1; margin-bottom: 0; margin-right: 20px; }
     .cookie-banner button { flex: 0 0 auto; }
@@ -402,9 +380,8 @@ footer p {
     header { padding: 20px 60px; }
     section { padding: 140px 60px; }
     h2, h3 { font-size: 40px; }
-    #about { padding: 160px 60px 120px 60px; }
-    #about .about-image { transform: translateX(50px); }
-    #about .about-box { transform: translateX(-50px); }
-    .contact-section { padding: 140px 60px; }
-    .contact-box { margin-left: 60px; }
+    #hero { padding: 180px 60px 120px 60px; }
+    #hero .hero-image { transform: translateX(50px); }
+    #hero .hero-box { transform: translateX(-50px); }
+    #hero .hero-box h1 { font-size: 40px; }
 }
