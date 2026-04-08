@@ -235,7 +235,8 @@ li {
     border-radius: 20px;
 }
 .btn-small:hover {
-    transform: scale(1.05);
+    background: rgb(225, 238, 237);
+    transform: scale(1.03);
 }
 
 /* Business Section */
