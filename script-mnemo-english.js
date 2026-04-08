@@ -88,7 +88,7 @@ prevButton.addEventListener('click', () => {
 let autoPlay = setInterval(() => {
     currentIndex++;
     updateCarousel();
-}, 1500);
+}, 3000);
 
 // Zatrzymaj autoPlay po najechaniu myszką
 document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
