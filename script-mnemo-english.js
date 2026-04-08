@@ -50,6 +50,60 @@ acceptCookies.addEventListener('click', () => {
     cookieBanner.style.display = 'none';
 });
 
+// Obsługa Karuzeli Opinii
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.carousel-next');
+const prevButton = document.querySelector('.carousel-prev');
+
+let currentIndex = 0;
+
+const getSlidesToShow = () => {
+    if (window.innerWidth >= 992) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+};
+
+const updateCarousel = () => {
+    const slidesToShow = getSlidesToShow();
+    const maxIndex = slides.length - slidesToShow;
+    if (currentIndex > maxIndex) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = maxIndex;
+    
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+};
+
+nextButton.addEventListener('click', () => {
+    currentIndex++;
+    updateCarousel();
+});
+
+prevButton.addEventListener('click', () => {
+    currentIndex--;
+    updateCarousel();
+});
+
+// Automatyczne przewijanie
+let autoPlay = setInterval(() => {
+    currentIndex++;
+    updateCarousel();
+}, 3000);
+
+// Zatrzymaj autoPlay po najechaniu myszką
+document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
+    clearInterval(autoPlay);
+});
+
+document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
+    autoPlay = setInterval(() => {
+        currentIndex++;
+        updateCarousel();
+    }, 3000);
+});
+
+window.addEventListener('resize', updateCarousel);
+
 // Animacja fade-in przy przewijaniu (Intersection Observer)
 const observerOptions = {
     threshold: 0.1
