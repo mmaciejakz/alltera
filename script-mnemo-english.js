@@ -3,22 +3,25 @@ document.querySelectorAll('.accordion-header').forEach(header => {
     header.addEventListener('click', () => {
         const content = header.nextElementSibling;
         const isOpen = content.style.display === 'block';
+        
+        // Zamknij inne otwarte elementy (opcjonalnie, dla lepszego UX)
+        // document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+        // document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+
         content.style.display = isOpen ? 'none' : 'block';
         header.classList.toggle('active', !isOpen);
     });
 });
 
-// Płynne przewijanie z offsetem dla nawigacji i przycisku "Skontaktuj się"
-document.querySelectorAll('nav a, .scroll-to-contact').forEach(anchor => {
+// Płynne przewijanie z offsetem dla nawigacji i przycisków
+document.querySelectorAll('nav a, .scroll-to-contact, .scroll-to-section').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         
-        // Jeśli link prowadzi na zewnątrz lub jest pełnym URL, nie blokuj
         if (href.startsWith('http') || href.startsWith('https') || href === '/') {
-            return; // pozwól na normalne działanie linku
+            return;
         }
         
-        // Jeśli to kotwica (#something) na tej samej stronie
         if (href.startsWith('#')) {
             e.preventDefault();
             const target = document.querySelector(href);
@@ -38,7 +41,6 @@ document.querySelectorAll('nav a, .scroll-to-contact').forEach(anchor => {
 const cookieBanner = document.getElementById('cookieBanner');
 const acceptCookies = document.getElementById('acceptCookies');
 
-// Sprawdź, czy użytkownik już zaakceptował ciasteczka
 if (localStorage.getItem('cookiesAccepted')) {
     cookieBanner.style.display = 'none';
 }
@@ -46,4 +48,23 @@ if (localStorage.getItem('cookiesAccepted')) {
 acceptCookies.addEventListener('click', () => {
     localStorage.setItem('cookiesAccepted', 'true');
     cookieBanner.style.display = 'none';
+});
+
+// Animacja fade-in przy przewijaniu (Intersection Observer)
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+    section.classList.add('fade-in'); // Można usunąć z HTML i dodawać dynamicznie
+    observer.observe(section);
 });
