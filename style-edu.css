@@ -27,6 +27,7 @@ header {
 }
 
 header img.logo {
+    transform: scale(1.2);
     height: 40px;
     width: auto;
 }
