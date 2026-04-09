@@ -24,7 +24,8 @@ header {
     z-index: 1000;
 }
 header img.logo {
-    height: 60px;
+    transform: scale(1.5);
+    height: 40px;
     width: auto;
 }
 nav {
