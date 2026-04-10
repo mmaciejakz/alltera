@@ -1,18 +1,3 @@
-// Obsługa akordeonu
-document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        const isOpen = content.style.display === 'block';
-        
-        // Zamknij inne otwarte elementy (opcjonalnie, dla lepszego UX)
-        // document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
-        // document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
-
-        content.style.display = isOpen ? 'none' : 'block';
-        header.classList.toggle('active', !isOpen);
-    });
-});
-
 // Płynne przewijanie z offsetem dla nawigacji i przycisków
 document.querySelectorAll('nav a, .scroll-to-contact, .scroll-to-section').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -119,6 +104,6 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.querySelectorAll('section').forEach(section => {
-    section.classList.add('fade-in'); // Można usunąć z HTML i dodawać dynamicznie
+    section.classList.add('fade-in');
     observer.observe(section);
 });

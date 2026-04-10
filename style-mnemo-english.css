@@ -456,3 +456,49 @@ footer p {
     #hero .hero-box { transform: translateX(-50px); }
     #hero .hero-box h1 { font-size: 40px; }
 }
+
+/* ===== ZMIANY: START - powiększone czcionki w hero ===== */
+#hero .hero-box p {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+#hero .hero-box h1 {
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+.hero-features li {
+    font-size: 17px;
+    line-height: 1.3;
+}
+/* ===== KONIEC zmian w hero ===== */
+
+/* ===== ZMIANY: stałe kontenery zamiast akordeonu (Metoda i Dlaczego to działa) ===== */
+.static-box {
+    margin: 20px 0;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.static-box-header {
+    padding: 15px;
+    background: rgb(180, 47, 53);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+.static-box-content {
+    padding: 15px;
+    background: rgb(255, 255, 255);
+    text-align: left;
+}
+.static-box-content ul {
+    margin: 0 0 10px 0;
+}
+.static-box-content p {
+    margin-bottom: 5px;
+}
+/* ===== KONIEC zmian ===== */
