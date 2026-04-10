@@ -12,7 +12,14 @@ document.querySelectorAll('nav a, .scroll-to-contact, .scroll-to-section').forEa
             const target = document.querySelector(href);
             if (target) {
                 const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                let targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                
+                // DODATKOWE DOSTROJENIE dla sekcji "Dla kogo?" i "Dla biznesu"
+                // Przewijamy je niżej o dodatkowe 40px, aby nagłówek nie był zasłonięty
+                if (href === '#for-whom' || href === '#business') {
+                    targetPosition = targetPosition + 40;
+                }
+                
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -76,16 +83,19 @@ let autoPlay = setInterval(() => {
 }, 3000);
 
 // Zatrzymaj autoPlay po najechaniu myszką
-document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
-    clearInterval(autoPlay);
-});
+const carouselContainer = document.querySelector('.carousel-container');
+if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoPlay);
+    });
 
-document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
-    autoPlay = setInterval(() => {
-        currentIndex++;
-        updateCarousel();
-    }, 3000);
-});
+    carouselContainer.addEventListener('mouseleave', () => {
+        autoPlay = setInterval(() => {
+            currentIndex++;
+            updateCarousel();
+        }, 3000);
+    });
+}
 
 window.addEventListener('resize', updateCarousel);
 
