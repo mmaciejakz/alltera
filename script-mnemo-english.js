@@ -14,13 +14,12 @@ document.querySelectorAll('nav a, .scroll-to-contact, .scroll-to-section').forEa
                 const headerHeight = document.querySelector('header').offsetHeight;
                 let targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
                 
-                // DODATKOWE DOSTROJENIE dla sekcji "Dla kogo?" i "Dla biznesu"
-                // Przewijamy je niżej o dodatkowe 40px, aby nagłówek nie był zasłonięty
+                // DODATKOWE DOSTROJENIE dla konkretnych sekcji
                 if (href === '#for-whom') {
                     targetPosition = targetPosition + 40;
                 }
                 if (href === '#business') {
-                    targetPosition = targetPosition + 70;
+                    targetPosition = targetPosition + 100;
                 }
                 
                 window.scrollTo({
