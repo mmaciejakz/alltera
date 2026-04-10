@@ -1,3 +1,8 @@
+/* Blokowanie wymuszania dark mode przez przeglądarkę */
+:root {
+    color-scheme: light only;
+}
+
 * {
     margin: 0;
     padding: 0;
