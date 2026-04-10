@@ -16,8 +16,11 @@ document.querySelectorAll('nav a, .scroll-to-contact, .scroll-to-section').forEa
                 
                 // DODATKOWE DOSTROJENIE dla sekcji "Dla kogo?" i "Dla biznesu"
                 // Przewijamy je niżej o dodatkowe 40px, aby nagłówek nie był zasłonięty
-                if (href === '#for-whom' || href === '#business') {
+                if (href === '#for-whom') {
                     targetPosition = targetPosition + 40;
+                }
+                if (href === '#business') {
+                    targetPosition = targetPosition + 50;
                 }
                 
                 window.scrollTo({
