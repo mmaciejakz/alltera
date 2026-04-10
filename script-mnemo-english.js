@@ -14,12 +14,23 @@ document.querySelectorAll('nav a, .scroll-to-contact, .scroll-to-section').forEa
                 const headerHeight = document.querySelector('header').offsetHeight;
                 let targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
                 
+                // Sprawdź czy to urządzenie mobilne (np. szerokość <= 768px)
+                const isMobile = window.innerWidth <= 768;
+                
                 // DODATKOWE DOSTROJENIE dla konkretnych sekcji
                 if (href === '#for-whom') {
-                    targetPosition = targetPosition + 80;
+                    if (isMobile) {
+                        targetPosition = targetPosition + 30; // mniejszy offset na mobile
+                    } else {
+                        targetPosition = targetPosition + 80; // oryginalny offset na PC
+                    }
                 }
                 if (href === '#business') {
-                    targetPosition = targetPosition + 150;
+                    if (isMobile) {
+                        targetPosition = targetPosition + 60; // mniejszy offset na mobile
+                    } else {
+                        targetPosition = targetPosition + 150; // oryginalny offset na PC
+                    }
                 }
                 
                 window.scrollTo({
