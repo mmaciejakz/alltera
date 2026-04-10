@@ -20,7 +20,7 @@ document.querySelectorAll('nav a, .scroll-to-contact, .scroll-to-section').forEa
                     targetPosition = targetPosition + 40;
                 }
                 if (href === '#business') {
-                    targetPosition = targetPosition + 50;
+                    targetPosition = targetPosition + 70;
                 }
                 
                 window.scrollTo({
