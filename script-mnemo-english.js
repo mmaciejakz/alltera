@@ -16,10 +16,10 @@ document.querySelectorAll('nav a, .scroll-to-contact, .scroll-to-section').forEa
                 
                 // DODATKOWE DOSTROJENIE dla konkretnych sekcji
                 if (href === '#for-whom') {
-                    targetPosition = targetPosition + 40;
+                    targetPosition = targetPosition + 70;
                 }
                 if (href === '#business') {
-                    targetPosition = targetPosition + 1000;
+                    targetPosition = targetPosition + 200;
                 }
                 
                 window.scrollTo({
