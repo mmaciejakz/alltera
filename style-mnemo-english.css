@@ -439,7 +439,7 @@ footer p {
     h2, h3 { font-size: 32px; }
     
     #hero { flex-direction: row; padding: 160px 40px 100px 40px; justify-content: center; }
-    #hero .hero-image { width: 450px; height: 350px; transform: translateX(30px); }
+    #hero .hero-image { width: 450px; transform: translateX(30px); }
     #hero .hero-box { transform: translateX(-30px); max-width: 550px; }
     #hero .hero-box h1 { font-size: 32px; }
     
