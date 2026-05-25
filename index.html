@@ -14,9 +14,10 @@
     <!-- MINI HEADER -->
     <div class="splash-header" id="splashHeader">
         <div class="header-content">
+            <!-- NOWY KOD -->
             <div class="header-info">
-                <span>OD CZEGO CHCESZ ZACZĄĆ?</span><br>
-                <span><small>Wybierz jedną z naszych marek i dowiedz się więcej</small></span>
+                <span class="header-title">OD CZEGO CHCESZ ZACZĄĆ?</span>
+                <span class="header-subtitle">Wybierz jedną z naszych marek i dowiedz się więcej</span>
             </div>
         </div>
     </div>
@@ -120,17 +121,30 @@
         width: 100%;
     }
     
+    /* NOWY */
     .header-info {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 6px;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        color: #2D3748;
+    }
+    
+    .header-title {
         font-size: 35px;
         font-weight: 600;
-        color: #2D3748;
-        font-family: 'Arial', sans-serif;
         letter-spacing: -0.3px;
-        text-align: center;
+        line-height: 1.2;
+    }
+    
+    .header-subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        color: #6B7280;
+        letter-spacing: 0;
     }
     
     /* MINI FOOTER STYLE */
@@ -415,8 +429,16 @@
             margin-top: auto;
         }
         
-        .header-info {
+        .header-title {
             font-size: 24px !important;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            line-height: 1.3;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        .header-subtitle {
+            font-size: 13px !important;
             font-weight: 600;
             letter-spacing: -0.2px;
             line-height: 1.3;
@@ -550,8 +572,11 @@
             padding: 25px 15px 12px 15px;
         }
         
-        .header-info {
+        .header-title {
             font-size: 20px !important;
+        }
+        .header-subtitle {
+            font-size: 12px !important;
         }
         
         .splash-footer {
@@ -589,7 +614,7 @@
             padding-top: 40px;
         }
         
-        .header-info {
+        .header-title {
             font-size: 26px !important;
         }
     }
