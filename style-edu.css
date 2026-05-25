@@ -83,7 +83,7 @@ h2, h3 {
 
 
 h2 {
-    inline-height: 1.0;
+    inline-height: 1.0 !important;
 }
 
 
