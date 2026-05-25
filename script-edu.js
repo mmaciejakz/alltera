@@ -13,18 +13,16 @@ document.querySelectorAll('nav a, .scroll-to-contact').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         
-        // Jeśli link prowadzi na zewnątrz lub jest pełnym URL, nie blokuj
         if (href.startsWith('http') || href.startsWith('https') || href === '/') {
-            return; // pozwól na normalne działanie linku
+            return;
         }
         
-        // Jeśli to kotwica (#something) na tej samej stronie
         if (href.startsWith('#')) {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
                 const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                const targetPosition = target.offsetTop - headerHeight - 20;
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
